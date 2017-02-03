@@ -128,16 +128,76 @@
     <Compile Include="data\VoidReason.cs">
       <DependentUpon>POS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="forms\CustomerListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="forms\CustomerListForm.Designer.cs">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\CustomerUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\CustomerUpdateForm.Designer.cs">
+      <DependentUpon>CustomerUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\PreferencesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\PreferencesForm.Designer.cs">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ProductListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ProductListForm.Designer.cs">
+      <DependentUpon>ProductListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\ProductQntyUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ProductQntyUpdateForm.Designer.cs">
+      <DependentUpon>ProductQntyUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SupplierListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SupplierListForm.Designer.cs">
+      <DependentUpon>SupplierListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\SupplierUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SupplierUpdateForm.Designer.cs">
+      <DependentUpon>SupplierUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="forms\CustomerListForm.resx">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\CustomerUpdateForm.resx">
+      <DependentUpon>CustomerUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\PreferencesForm.resx">
+      <DependentUpon>PreferencesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ProductListForm.resx">
+      <DependentUpon>ProductListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ProductQntyUpdateForm.resx">
+      <DependentUpon>ProductQntyUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\SupplierListForm.resx">
+      <DependentUpon>SupplierListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -156,6 +216,11 @@
       <DependentUpon>POS.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PharmaPos.data.Category.datasource" />
+    <None Include="Properties\DataSources\PharmaPos.data.DrugType.datasource" />
+    <None Include="Properties\DataSources\PharmaPos.data.Packing.datasource" />
+    <None Include="Properties\DataSources\PharmaPos.data.Unit.datasource" />
+    <None Include="Properties\DataSources\PharmaPos.data.VoidReason.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -172,7 +237,6 @@
   <ItemGroup>
     <Folder Include="dal\obj\" />
     <Folder Include="dal\sta\" />
-    <Folder Include="forms\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\POS.Context.tt">
