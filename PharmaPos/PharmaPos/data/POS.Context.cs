@@ -28,12 +28,16 @@ namespace PharmaPos.data
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<ProductQuantity> ProductQuantities { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Receipt> Receipts { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Unit> Units { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<DrugType> DrugTypes { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Packing> Packings { get; set; }
+        public virtual DbSet<ProductQuantity> ProductQuantities { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<VoidReason> VoidReasons { get; set; }
+        public virtual DbSet<Void> Voids { get; set; }
     }
 }

@@ -33,8 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +57,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dal\man\CategoryManager.cs" />
+    <Compile Include="dal\man\CustomerManager.cs" />
+    <Compile Include="dal\man\DrugTypeManager.cs" />
+    <Compile Include="dal\man\OrderDetailManager.cs" />
+    <Compile Include="dal\man\OrderManager.cs" />
+    <Compile Include="dal\man\PackingManager.cs" />
+    <Compile Include="dal\man\ProductManager.cs" />
+    <Compile Include="dal\man\ReceiptManager.cs" />
+    <Compile Include="dal\man\SupplierManager.cs" />
+    <Compile Include="dal\man\UnitManager.cs" />
+    <Compile Include="dal\man\VoidManager.cs" />
+    <Compile Include="dal\man\VoidReasonManager.cs" />
+    <Compile Include="data\Category.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\Customer.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\DataRepository.cs" />
+    <Compile Include="data\DrugType.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\IDataRepository.cs" />
+    <Compile Include="data\Order.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\OrderDetail.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\Packing.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\POS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\POS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\POS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="data\Product.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\ProductQuantity.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\Receipt.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\Supplier.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\Unit.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\User.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\Void.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="data\VoidReason.cs">
+      <DependentUpon>POS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +136,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +148,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="data\POS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>POS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="data\POS.edmx.diagram">
+      <DependentUpon>POS.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +168,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dal\obj\" />
+    <Folder Include="dal\sta\" />
+    <Folder Include="forms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\POS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>POS.edmx</DependentUpon>
+      <LastGenOutput>POS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="data\POS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>POS.edmx</DependentUpon>
+      <LastGenOutput>POS.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

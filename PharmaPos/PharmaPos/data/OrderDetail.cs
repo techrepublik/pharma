@@ -14,6 +14,12 @@ namespace PharmaPos.data
     
     public partial class OrderDetail
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public OrderDetail()
+        {
+            this.Voids = new HashSet<Void>();
+        }
+    
         public int OrderDetailId { get; set; }
         public Nullable<int> ProductQuantityId { get; set; }
         public Nullable<double> OrderDetailQnty { get; set; }
@@ -24,5 +30,7 @@ namespace PharmaPos.data
     
         public virtual Order Order { get; set; }
         public virtual ProductQuantity ProductQuantity { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Void> Voids { get; set; }
     }
 }

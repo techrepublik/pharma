@@ -24,13 +24,18 @@ namespace PharmaPos.data
         public string ProductCode { get; set; }
         public string ProductLotNo { get; set; }
         public string ProductName { get; set; }
+        public string ProductGenericName { get; set; }
         public string ProductDescription { get; set; }
+        public string ProductInstruction { get; set; }
         public byte[] ProductPicture { get; set; }
+        public Nullable<double> ProductAlertCount { get; set; }
         public Nullable<int> UnitId { get; set; }
         public Nullable<int> CategoryId { get; set; }
         public Nullable<int> SupplierId { get; set; }
+        public Nullable<int> DrugTypeId { get; set; }
     
         public virtual Category Category { get; set; }
+        public virtual DrugType DrugType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductQuantity> ProductQuantities { get; set; }
         public virtual Supplier Supplier { get; set; }

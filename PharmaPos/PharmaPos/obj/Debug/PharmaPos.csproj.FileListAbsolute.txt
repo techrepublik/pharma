@@ -1,1 +1,13 @@
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\bin\Debug\PharmaPos.exe.config
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.csprojResolveAssemblyReference.cache
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.MainForm.resources
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.Properties.Resources.resources
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.csproj.GenerateResource.Cache
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\bin\Debug\PharmaPos.exe
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\bin\Debug\PharmaPos.pdb
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\bin\Debug\EntityFramework.dll
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\bin\Debug\EntityFramework.xml
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.exe
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.pdb
