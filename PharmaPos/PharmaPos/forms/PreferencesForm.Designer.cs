@@ -440,7 +440,7 @@
             this.Controls.Add(this.categoryBindingNavigator);
             this.Controls.Add(this.panel1);
             this.Name = "PreferencesForm";
-            this.Text = "PreferencesForm";
+            this.Text = "Preferences Form";
             this.Load += new System.EventHandler(this.PreferencesForm_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
