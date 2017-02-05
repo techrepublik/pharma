@@ -35,57 +35,57 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.categoryDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.unitDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.drugTypeDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.packingDataGridView = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.voidReasonDataGridView = new System.Windows.Forms.DataGridView();
             this.categoryBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.categoryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.categoryDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unitDataGridView = new System.Windows.Forms.DataGridView();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drugTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.drugTypeDataGridView = new System.Windows.Forms.DataGridView();
+            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.packingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.packingDataGridView = new System.Windows.Forms.DataGridView();
+            this.drugTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.voidReasonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.voidReasonDataGridView = new System.Windows.Forms.DataGridView();
+            this.packingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.voidReasonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unitDataGridView)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drugTypeDataGridView)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.packingDataGridView)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voidReasonDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingNavigator)).BeginInit();
             this.categoryBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drugTypeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packingDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voidReasonBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voidReasonDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,6 +126,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(574, 289);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPage1
             // 
@@ -139,6 +140,21 @@
             this.tabPage1.Text = "Category";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // categoryDataGridView
+            // 
+            this.categoryDataGridView.AutoGenerateColumns = false;
+            this.categoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.categoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2});
+            this.categoryDataGridView.DataSource = this.categoryBindingSource;
+            this.categoryDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categoryDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.categoryDataGridView.Name = "categoryDataGridView";
+            this.categoryDataGridView.RowHeadersWidth = 30;
+            this.categoryDataGridView.Size = new System.Drawing.Size(560, 257);
+            this.categoryDataGridView.TabIndex = 0;
+            this.categoryDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoryDataGridView_RowLeave);
+            // 
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
@@ -151,6 +167,21 @@
             this.tabPage2.Text = "Unit";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // unitDataGridView
+            // 
+            this.unitDataGridView.AutoGenerateColumns = false;
+            this.unitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.unitDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn3});
+            this.unitDataGridView.DataSource = this.unitBindingSource;
+            this.unitDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.unitDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.unitDataGridView.Name = "unitDataGridView";
+            this.unitDataGridView.RowHeadersWidth = 30;
+            this.unitDataGridView.Size = new System.Drawing.Size(560, 257);
+            this.unitDataGridView.TabIndex = 0;
+            this.unitDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.unitDataGridView_RowLeave);
+            // 
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
@@ -161,6 +192,21 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Drug Type";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // drugTypeDataGridView
+            // 
+            this.drugTypeDataGridView.AutoGenerateColumns = false;
+            this.drugTypeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.drugTypeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4});
+            this.drugTypeDataGridView.DataSource = this.drugTypeBindingSource;
+            this.drugTypeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drugTypeDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.drugTypeDataGridView.Name = "drugTypeDataGridView";
+            this.drugTypeDataGridView.RowHeadersWidth = 30;
+            this.drugTypeDataGridView.Size = new System.Drawing.Size(566, 263);
+            this.drugTypeDataGridView.TabIndex = 0;
+            this.drugTypeDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.drugTypeDataGridView_RowLeave);
             // 
             // tabPage4
             // 
@@ -173,6 +219,21 @@
             this.tabPage4.Text = "Packing";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // packingDataGridView
+            // 
+            this.packingDataGridView.AutoGenerateColumns = false;
+            this.packingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.packingDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5});
+            this.packingDataGridView.DataSource = this.packingBindingSource;
+            this.packingDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.packingDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.packingDataGridView.Name = "packingDataGridView";
+            this.packingDataGridView.RowHeadersWidth = 30;
+            this.packingDataGridView.Size = new System.Drawing.Size(566, 263);
+            this.packingDataGridView.TabIndex = 0;
+            this.packingDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.packingDataGridView_RowLeave);
+            // 
             // tabPage5
             // 
             this.tabPage5.AutoScroll = true;
@@ -184,16 +245,27 @@
             this.tabPage5.Text = "Void Reason";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // categoryBindingSource
+            // voidReasonDataGridView
             // 
-            this.categoryBindingSource.DataSource = typeof(PharmaPos.data.Category);
+            this.voidReasonDataGridView.AutoGenerateColumns = false;
+            this.voidReasonDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.voidReasonDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6});
+            this.voidReasonDataGridView.DataSource = this.voidReasonBindingSource;
+            this.voidReasonDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.voidReasonDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.voidReasonDataGridView.Name = "voidReasonDataGridView";
+            this.voidReasonDataGridView.RowHeadersWidth = 30;
+            this.voidReasonDataGridView.Size = new System.Drawing.Size(566, 263);
+            this.voidReasonDataGridView.TabIndex = 0;
+            this.voidReasonDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.voidReasonDataGridView_RowLeave);
             // 
             // categoryBindingNavigator
             // 
             this.categoryBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.categoryBindingNavigator.BindingSource = this.categoryBindingSource;
             this.categoryBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.categoryBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.categoryBindingNavigator.DeleteItem = null;
             this.categoryBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -217,6 +289,30 @@
             this.categoryBindingNavigator.Size = new System.Drawing.Size(574, 25);
             this.categoryBindingNavigator.TabIndex = 3;
             this.categoryBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(74, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(60, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -250,16 +346,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -282,24 +371,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(74, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(60, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // categoryBindingNavigatorSaveItem
             // 
@@ -308,20 +381,7 @@
             this.categoryBindingNavigatorSaveItem.Name = "categoryBindingNavigatorSaveItem";
             this.categoryBindingNavigatorSaveItem.Size = new System.Drawing.Size(78, 22);
             this.categoryBindingNavigatorSaveItem.Text = "Save Data";
-            // 
-            // categoryDataGridView
-            // 
-            this.categoryDataGridView.AutoGenerateColumns = false;
-            this.categoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.categoryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2});
-            this.categoryDataGridView.DataSource = this.categoryBindingSource;
-            this.categoryDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.categoryDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.categoryDataGridView.Name = "categoryDataGridView";
-            this.categoryDataGridView.RowHeadersWidth = 30;
-            this.categoryDataGridView.Size = new System.Drawing.Size(560, 257);
-            this.categoryDataGridView.TabIndex = 0;
+            this.categoryBindingNavigatorSaveItem.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -330,23 +390,9 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 500;
             // 
-            // unitBindingSource
+            // categoryBindingSource
             // 
-            this.unitBindingSource.DataSource = typeof(PharmaPos.data.Unit);
-            // 
-            // unitDataGridView
-            // 
-            this.unitDataGridView.AutoGenerateColumns = false;
-            this.unitDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.unitDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3});
-            this.unitDataGridView.DataSource = this.unitBindingSource;
-            this.unitDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.unitDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.unitDataGridView.Name = "unitDataGridView";
-            this.unitDataGridView.RowHeadersWidth = 30;
-            this.unitDataGridView.Size = new System.Drawing.Size(560, 257);
-            this.unitDataGridView.TabIndex = 0;
+            this.categoryBindingSource.DataSource = typeof(PharmaPos.data.Category);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -355,23 +401,9 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 500;
             // 
-            // drugTypeBindingSource
+            // unitBindingSource
             // 
-            this.drugTypeBindingSource.DataSource = typeof(PharmaPos.data.DrugType);
-            // 
-            // drugTypeDataGridView
-            // 
-            this.drugTypeDataGridView.AutoGenerateColumns = false;
-            this.drugTypeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drugTypeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4});
-            this.drugTypeDataGridView.DataSource = this.drugTypeBindingSource;
-            this.drugTypeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drugTypeDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.drugTypeDataGridView.Name = "drugTypeDataGridView";
-            this.drugTypeDataGridView.RowHeadersWidth = 30;
-            this.drugTypeDataGridView.Size = new System.Drawing.Size(566, 263);
-            this.drugTypeDataGridView.TabIndex = 0;
+            this.unitBindingSource.DataSource = typeof(PharmaPos.data.Unit);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -380,23 +412,9 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 500;
             // 
-            // packingBindingSource
+            // drugTypeBindingSource
             // 
-            this.packingBindingSource.DataSource = typeof(PharmaPos.data.Packing);
-            // 
-            // packingDataGridView
-            // 
-            this.packingDataGridView.AutoGenerateColumns = false;
-            this.packingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.packingDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5});
-            this.packingDataGridView.DataSource = this.packingBindingSource;
-            this.packingDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.packingDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.packingDataGridView.Name = "packingDataGridView";
-            this.packingDataGridView.RowHeadersWidth = 30;
-            this.packingDataGridView.Size = new System.Drawing.Size(566, 263);
-            this.packingDataGridView.TabIndex = 0;
+            this.drugTypeBindingSource.DataSource = typeof(PharmaPos.data.DrugType);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -405,23 +423,9 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 500;
             // 
-            // voidReasonBindingSource
+            // packingBindingSource
             // 
-            this.voidReasonBindingSource.DataSource = typeof(PharmaPos.data.VoidReason);
-            // 
-            // voidReasonDataGridView
-            // 
-            this.voidReasonDataGridView.AutoGenerateColumns = false;
-            this.voidReasonDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.voidReasonDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6});
-            this.voidReasonDataGridView.DataSource = this.voidReasonBindingSource;
-            this.voidReasonDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.voidReasonDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.voidReasonDataGridView.Name = "voidReasonDataGridView";
-            this.voidReasonDataGridView.RowHeadersWidth = 30;
-            this.voidReasonDataGridView.Size = new System.Drawing.Size(566, 263);
-            this.voidReasonDataGridView.TabIndex = 0;
+            this.packingBindingSource.DataSource = typeof(PharmaPos.data.Packing);
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -429,6 +433,10 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Void Reason";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 500;
+            // 
+            // voidReasonBindingSource
+            // 
+            this.voidReasonBindingSource.DataSource = typeof(PharmaPos.data.VoidReason);
             // 
             // PreferencesForm
             // 
@@ -446,23 +454,23 @@
             this.statusStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.unitDataGridView)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.drugTypeDataGridView)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.packingDataGridView)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voidReasonDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingNavigator)).EndInit();
             this.categoryBindingNavigator.ResumeLayout(false);
             this.categoryBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drugTypeDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packingDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.voidReasonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voidReasonDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

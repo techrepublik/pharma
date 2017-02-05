@@ -12,7 +12,8 @@ namespace PharmaPos.dal.man
         {
             var a = new DrugType
             {
-                DrugTypeId = drugType.DrugTypeId
+                DrugTypeId = drugType.DrugTypeId,
+                DrugTypeName = drugType.DrugTypeName
             };
 
             using (_d = new DataRepository<DrugType>())

@@ -11,3 +11,10 @@ C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\bin\Debug\EntityFramew
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.exe
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.pdb
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.CustomerListForm.resources
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.CustomerUpdateForm.resources
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.PreferencesForm.resources
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.ProductListForm.resources
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.ProductQntyUpdateForm.resources
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.SupplierListForm.resources
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.SupplierUpdateForm.resources
