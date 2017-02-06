@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using PharmaPos.data;
 using PharmaPos.dal.man;
@@ -8,6 +9,7 @@ namespace PharmaPos.forms
     public partial class ProductListForm : Form
     {
         Product _product = new Product();
+        private List<Product> _listProducts;
         public ProductListForm()
         {
             InitializeComponent();
@@ -41,7 +43,8 @@ namespace PharmaPos.forms
             drugTypeBindingSource.DataSource = DrugTypeManager.GetAll();
             packingBindingSource.DataSource = PackingManager.GetAll();
 
-            productBindingSource.DataSource = ProductManager.GetAll();
+            _listProducts = ProductManager.GetAll();
+            productBindingSource.DataSource = _listProducts;
             Cursor.Current = Cursors.Default;
         }
 
@@ -119,6 +122,28 @@ namespace PharmaPos.forms
                     productDataGridView.Focus();
                 }
             }
+        }
+
+        private void toolStripButtonRefresh_Click(object sender, EventArgs e)
+        {
+            InitRecord();
+        }
+
+        private void toolStripButtonGo_Click(object sender, EventArgs e)
+        {
+            var strSearch = string.Empty;
+            if (toolStripTextBox1.Text.Length > 0)
+            {
+                strSearch = toolStripTextBox1.Text.ToUpper();
+            }
+
+            Cursor.Current = Cursors.WaitCursor;
+            productBindingSource.DataSource = _listProducts.FindAll(f => f.ProductName.ToUpper().Contains(strSearch) ||
+                                                                         f.ProductGenericName.ToUpper().Contains(strSearch) ||
+                                                                         f.ProductCode == strSearch ||
+                                                                         f.ProductDescription.ToUpper().Contains(strSearch) ||
+                                                                         f.ProductInstruction.ToUpper().Contains(strSearch));
+            Cursor.Current = Cursors.Default;
         }
     }
 }

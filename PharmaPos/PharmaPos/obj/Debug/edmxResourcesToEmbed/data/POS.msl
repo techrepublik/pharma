@@ -46,14 +46,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Units">
-      <EntityTypeMapping TypeName="pharmaModel.Unit">
-        <MappingFragment StoreEntitySet="Units">
-          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
-          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="pharmaModel.User">
         <MappingFragment StoreEntitySet="Users">
@@ -96,43 +88,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ProductQuantities">
-      <EntityTypeMapping TypeName="pharmaModel.ProductQuantity">
-        <MappingFragment StoreEntitySet="ProductQuantities">
-          <ScalarProperty Name="PackingId" ColumnName="PackingId" />
-          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-          <ScalarProperty Name="ProductQuantityIsExpired" ColumnName="ProductQuantityIsExpired" />
-          <ScalarProperty Name="ProductQuantityIsDiscounted" ColumnName="ProductQuantityIsDiscounted" />
-          <ScalarProperty Name="ProductQuantityIsActive" ColumnName="ProductQuantityIsActive" />
-          <ScalarProperty Name="ProductQuantityPrice" ColumnName="ProductQuantityPrice" />
-          <ScalarProperty Name="ProductQuanitityCost" ColumnName="ProductQuanitityCost" />
-          <ScalarProperty Name="ProductQuantityQnty" ColumnName="ProductQuantityQnty" />
-          <ScalarProperty Name="ProductQuantityExpiryDate" ColumnName="ProductQuantityExpiryDate" />
-          <ScalarProperty Name="ProductManufactureDate" ColumnName="ProductManufactureDate" />
-          <ScalarProperty Name="ProductQuantityDate" ColumnName="ProductQuantityDate" />
-          <ScalarProperty Name="ProductQuantityId" ColumnName="ProductQuantityId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Products">
-      <EntityTypeMapping TypeName="pharmaModel.Product">
-        <MappingFragment StoreEntitySet="Products">
-          <ScalarProperty Name="DrugTypeId" ColumnName="DrugTypeId" />
-          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
-          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
-          <ScalarProperty Name="ProductAlertCount" ColumnName="ProductAlertCount" />
-          <ScalarProperty Name="ProductPicture" ColumnName="ProductPicture" />
-          <ScalarProperty Name="ProductInstruction" ColumnName="ProductInstruction" />
-          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
-          <ScalarProperty Name="ProductGenericName" ColumnName="ProductGenericName" />
-          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          <ScalarProperty Name="ProductLotNo" ColumnName="ProductLotNo" />
-          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="VoidReasons">
       <EntityTypeMapping TypeName="pharmaModel.VoidReason">
         <MappingFragment StoreEntitySet="VoidReasons">
@@ -164,6 +119,52 @@
           <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
           <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
           <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductQuantities">
+      <EntityTypeMapping TypeName="pharmaModel.ProductQuantity">
+        <MappingFragment StoreEntitySet="ProductQuantities">
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="PackingId" ColumnName="PackingId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductQuantityVolume" ColumnName="ProductQuantityVolume" />
+          <ScalarProperty Name="ProductQuantityIsExpired" ColumnName="ProductQuantityIsExpired" />
+          <ScalarProperty Name="ProductQuantityIsDiscounted" ColumnName="ProductQuantityIsDiscounted" />
+          <ScalarProperty Name="ProductQuantityIsActive" ColumnName="ProductQuantityIsActive" />
+          <ScalarProperty Name="ProductQuantityPrice" ColumnName="ProductQuantityPrice" />
+          <ScalarProperty Name="ProductQuanitityCost" ColumnName="ProductQuanitityCost" />
+          <ScalarProperty Name="ProductQuantityQnty" ColumnName="ProductQuantityQnty" />
+          <ScalarProperty Name="ProductQuantityExpiryDate" ColumnName="ProductQuantityExpiryDate" />
+          <ScalarProperty Name="ProductManufactureDate" ColumnName="ProductManufactureDate" />
+          <ScalarProperty Name="ProductQuantityDate" ColumnName="ProductQuantityDate" />
+          <ScalarProperty Name="ProductQuantityId" ColumnName="ProductQuantityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="pharmaModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="DrugTypeId" ColumnName="DrugTypeId" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ProductAlertCount" ColumnName="ProductAlertCount" />
+          <ScalarProperty Name="ProductPicture" ColumnName="ProductPicture" />
+          <ScalarProperty Name="ProductInstruction" ColumnName="ProductInstruction" />
+          <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+          <ScalarProperty Name="ProductGenericName" ColumnName="ProductGenericName" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductLotNo" ColumnName="ProductLotNo" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Units">
+      <EntityTypeMapping TypeName="pharmaModel.Unit">
+        <MappingFragment StoreEntitySet="Units">
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

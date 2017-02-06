@@ -25,7 +25,6 @@ namespace PharmaPos.forms
             Cursor.Current = Cursors.WaitCursor;
             supplierBindingSource.DataSource = SupplierManager.GetAll();
             categoryBindingSource.DataSource = CategoryManager.GetAll();
-            unitBindingSource.DataSource = UnitManager.GetAll();
             drugTypeBindingSource.DataSource = DrugTypeManager.GetAll();
             Cursor.Current = Cursors.Default;
         }
@@ -38,6 +37,10 @@ namespace PharmaPos.forms
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            supplierIdComboBox.SelectedIndex = 0;
+            categoryIdComboBox.SelectedItem = 0;
+            drugTypeIdComboBox.SelectedIndex = 0;
+
             productCodeTextBox.Focus();
         }
 

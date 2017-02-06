@@ -74,8 +74,10 @@
           <Property Name="ProductQuantityIsActive" Type="bit" />
           <Property Name="ProductQuantityIsDiscounted" Type="bit" />
           <Property Name="ProductQuantityIsExpired" Type="bit" />
+          <Property Name="ProductQuantityVolume" Type="float" />
           <Property Name="ProductId" Type="int" />
           <Property Name="PackingId" Type="int" />
+          <Property Name="UnitId" Type="int" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -90,7 +92,6 @@
           <Property Name="ProductInstruction" Type="varchar(max)" />
           <Property Name="ProductPicture" Type="image" />
           <Property Name="ProductAlertCount" Type="float" />
-          <Property Name="UnitId" Type="int" />
           <Property Name="CategoryId" Type="int" />
           <Property Name="SupplierId" Type="int" />
           <Property Name="DrugTypeId" Type="int" />
@@ -237,6 +238,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProductQuantities_Units">
+          <End Role="Units" Type="Self.Units" Multiplicity="0..1" />
+          <End Role="ProductQuantities" Type="Self.ProductQuantities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="UnitId" />
+            </Principal>
+            <Dependent Role="ProductQuantities">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Products_Categories">
           <End Role="Categories" Type="Self.Categories" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -274,20 +287,6 @@
             </Principal>
             <Dependent Role="Products">
               <PropertyRef Name="SupplierId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Products_Units">
-          <End Role="Units" Type="Self.Units" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Products" Type="Self.Products" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Units">
-              <PropertyRef Name="UnitId" />
-            </Principal>
-            <Dependent Role="Products">
-              <PropertyRef Name="UnitId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -370,6 +369,10 @@
             <End Role="Products" EntitySet="Products" />
             <End Role="ProductQuantities" EntitySet="ProductQuantities" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProductQuantities_Units" Association="Self.FK_ProductQuantities_Units">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="ProductQuantities" EntitySet="ProductQuantities" />
+          </AssociationSet>
           <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
@@ -380,10 +383,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Products_Suppliers" Association="Self.FK_Products_Suppliers">
             <End Role="Suppliers" EntitySet="Suppliers" />
-            <End Role="Products" EntitySet="Products" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Products_Units" Association="Self.FK_Products_Units">
-            <End Role="Units" EntitySet="Units" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="FK_Receipts_Orders" Association="Self.FK_Receipts_Orders">
@@ -435,8 +434,8 @@
           <Property Name="OrderDetailIsActive" Type="Boolean" />
           <Property Name="OrderId" Type="Int32" />
           <NavigationProperty Name="Order" Relationship="pharmaModel.FK_OrderDetails_Orders" FromRole="OrderDetail" ToRole="Order" />
-          <NavigationProperty Name="ProductQuantity" Relationship="pharmaModel.FK_OrderDetails_ProductQuantities" FromRole="OrderDetail" ToRole="ProductQuantity" />
           <NavigationProperty Name="Voids" Relationship="pharmaModel.FK_Voids_OrderDetails" FromRole="OrderDetail" ToRole="Void" />
+          <NavigationProperty Name="ProductQuantity" Relationship="pharmaModel.FK_OrderDetails_ProductQuantities" FromRole="OrderDetail" ToRole="ProductQuantity" />
         </EntityType>
         <EntityType Name="Receipt">
           <Key>
@@ -449,14 +448,6 @@
           <Property Name="ReceiptIsActive" Type="Boolean" />
           <Property Name="OrderId" Type="Int32" />
           <NavigationProperty Name="Order" Relationship="pharmaModel.FK_Receipts_Orders" FromRole="Receipt" ToRole="Order" />
-        </EntityType>
-        <EntityType Name="Unit">
-          <Key>
-            <PropertyRef Name="UnitId" />
-          </Key>
-          <Property Name="UnitId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UnitName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Products" Relationship="pharmaModel.FK_Products_Units" FromRole="Unit" ToRole="Product" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -477,31 +468,16 @@
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
           <EntitySet Name="Receipts" EntityType="Self.Receipt" />
-          <EntitySet Name="Units" EntityType="Self.Unit" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="DrugTypes" EntityType="pharmaModel.DrugType" />
           <EntitySet Name="Orders" EntityType="pharmaModel.Order" />
           <EntitySet Name="Packings" EntityType="pharmaModel.Packing" />
-          <EntitySet Name="ProductQuantities" EntityType="pharmaModel.ProductQuantity" />
-          <EntitySet Name="Products" EntityType="pharmaModel.Product" />
-          <AssociationSet Name="FK_Products_Categories" Association="pharmaModel.FK_Products_Categories">
-            <End Role="Category" EntitySet="Categories" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
           <AssociationSet Name="FK_Orders_Customers" Association="pharmaModel.FK_Orders_Customers">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Order" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Products_DrugTypes" Association="pharmaModel.FK_Products_DrugTypes">
-            <End Role="DrugType" EntitySet="DrugTypes" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
           <AssociationSet Name="FK_OrderDetails_Orders" Association="pharmaModel.FK_OrderDetails_Orders">
             <End Role="Order" EntitySet="Orders" />
-            <End Role="OrderDetail" EntitySet="OrderDetails" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrderDetails_ProductQuantities" Association="pharmaModel.FK_OrderDetails_ProductQuantities">
-            <End Role="ProductQuantity" EntitySet="ProductQuantities" />
             <End Role="OrderDetail" EntitySet="OrderDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_Orders_Users" Association="pharmaModel.FK_Orders_Users">
@@ -511,18 +487,6 @@
           <AssociationSet Name="FK_Receipts_Orders" Association="pharmaModel.FK_Receipts_Orders">
             <End Role="Order" EntitySet="Orders" />
             <End Role="Receipt" EntitySet="Receipts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProductQuantities_Packings" Association="pharmaModel.FK_ProductQuantities_Packings">
-            <End Role="Packing" EntitySet="Packings" />
-            <End Role="ProductQuantity" EntitySet="ProductQuantities" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProductQuantities_Products" Association="pharmaModel.FK_ProductQuantities_Products">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="ProductQuantity" EntitySet="ProductQuantities" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Products_Units" Association="pharmaModel.FK_Products_Units">
-            <End Role="Unit" EntitySet="Units" />
-            <End Role="Product" EntitySet="Products" />
           </AssociationSet>
           <EntitySet Name="VoidReasons" EntityType="pharmaModel.VoidReason" />
           <EntitySet Name="Voids" EntityType="pharmaModel.Void" />
@@ -535,6 +499,33 @@
             <End Role="Void" EntitySet="Voids" />
           </AssociationSet>
           <EntitySet Name="Suppliers" EntityType="pharmaModel.Supplier" />
+          <EntitySet Name="ProductQuantities" EntityType="pharmaModel.ProductQuantity" />
+          <EntitySet Name="Products" EntityType="pharmaModel.Product" />
+          <EntitySet Name="Units" EntityType="pharmaModel.Unit" />
+          <AssociationSet Name="FK_Products_Categories" Association="pharmaModel.FK_Products_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_DrugTypes" Association="pharmaModel.FK_Products_DrugTypes">
+            <End Role="DrugType" EntitySet="DrugTypes" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderDetails_ProductQuantities" Association="pharmaModel.FK_OrderDetails_ProductQuantities">
+            <End Role="ProductQuantity" EntitySet="ProductQuantities" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductQuantities_Packings" Association="pharmaModel.FK_ProductQuantities_Packings">
+            <End Role="Packing" EntitySet="Packings" />
+            <End Role="ProductQuantity" EntitySet="ProductQuantities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductQuantities_Products" Association="pharmaModel.FK_ProductQuantities_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductQuantity" EntitySet="ProductQuantities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductQuantities_Units" Association="pharmaModel.FK_ProductQuantities_Units">
+            <End Role="Unit" EntitySet="Units" />
+            <End Role="ProductQuantity" EntitySet="ProductQuantities" />
+          </AssociationSet>
           <AssociationSet Name="FK_Products_Suppliers" Association="pharmaModel.FK_Products_Suppliers">
             <End Role="Supplier" EntitySet="Suppliers" />
             <End Role="Product" EntitySet="Products" />
@@ -571,63 +562,6 @@
           <Property Name="PackingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ProductQuantities" Relationship="pharmaModel.FK_ProductQuantities_Packings" FromRole="Packing" ToRole="ProductQuantity" />
         </EntityType>
-        <EntityType Name="ProductQuantity">
-          <Key>
-            <PropertyRef Name="ProductQuantityId" />
-          </Key>
-          <Property Name="ProductQuantityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductQuantityDate" Type="DateTime" Precision="0" />
-          <Property Name="ProductManufactureDate" Type="DateTime" Precision="0" />
-          <Property Name="ProductQuantityExpiryDate" Type="DateTime" Precision="0" />
-          <Property Name="ProductQuantityQnty" Type="Double" />
-          <Property Name="ProductQuanitityCost" Type="Double" />
-          <Property Name="ProductQuantityPrice" Type="Double" />
-          <Property Name="ProductQuantityIsActive" Type="Boolean" />
-          <Property Name="ProductQuantityIsDiscounted" Type="Boolean" />
-          <Property Name="ProductQuantityIsExpired" Type="Boolean" />
-          <Property Name="ProductId" Type="Int32" />
-          <Property Name="PackingId" Type="Int32" />
-          <NavigationProperty Name="OrderDetails" Relationship="pharmaModel.FK_OrderDetails_ProductQuantities" FromRole="ProductQuantity" ToRole="OrderDetail" />
-          <NavigationProperty Name="Packing" Relationship="pharmaModel.FK_ProductQuantities_Packings" FromRole="ProductQuantity" ToRole="Packing" />
-          <NavigationProperty Name="Product" Relationship="pharmaModel.FK_ProductQuantities_Products" FromRole="ProductQuantity" ToRole="Product" />
-        </EntityType>
-        <EntityType Name="Product">
-          <Key>
-            <PropertyRef Name="ProductId" />
-          </Key>
-          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ProductLotNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ProductGenericName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ProductInstruction" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ProductPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="ProductAlertCount" Type="Double" />
-          <Property Name="UnitId" Type="Int32" />
-          <Property Name="CategoryId" Type="Int32" />
-          <Property Name="SupplierId" Type="Int32" />
-          <Property Name="DrugTypeId" Type="Int32" />
-          <NavigationProperty Name="Category" Relationship="pharmaModel.FK_Products_Categories" FromRole="Product" ToRole="Category" />
-          <NavigationProperty Name="DrugType" Relationship="pharmaModel.FK_Products_DrugTypes" FromRole="Product" ToRole="DrugType" />
-          <NavigationProperty Name="ProductQuantities" Relationship="pharmaModel.FK_ProductQuantities_Products" FromRole="Product" ToRole="ProductQuantity" />
-          <NavigationProperty Name="Unit" Relationship="pharmaModel.FK_Products_Units" FromRole="Product" ToRole="Unit" />
-          <NavigationProperty Name="Supplier" Relationship="pharmaModel.FK_Products_Suppliers" FromRole="Product" ToRole="Supplier" />
-        </EntityType>
-        <Association Name="FK_Products_Categories">
-          <End Type="pharmaModel.Category" Role="Category" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="pharmaModel.Product" Role="Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="CategoryId" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="CategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Orders_Customers">
           <End Type="pharmaModel.Customer" Role="Customer" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -642,18 +576,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Products_DrugTypes">
-          <End Type="pharmaModel.DrugType" Role="DrugType" Multiplicity="0..1" />
-          <End Type="pharmaModel.Product" Role="Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DrugType">
-              <PropertyRef Name="DrugTypeId" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="DrugTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_OrderDetails_Orders">
           <End Type="pharmaModel.Order" Role="Order" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -665,20 +587,6 @@
             </Principal>
             <Dependent Role="OrderDetail">
               <PropertyRef Name="OrderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrderDetails_ProductQuantities">
-          <End Type="pharmaModel.ProductQuantity" Role="ProductQuantity" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="pharmaModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProductQuantity">
-              <PropertyRef Name="ProductQuantityId" />
-            </Principal>
-            <Dependent Role="OrderDetail">
-              <PropertyRef Name="ProductQuantityId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -705,46 +613,6 @@
             </Principal>
             <Dependent Role="Receipt">
               <PropertyRef Name="OrderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProductQuantities_Packings">
-          <End Type="pharmaModel.Packing" Role="Packing" Multiplicity="0..1" />
-          <End Type="pharmaModel.ProductQuantity" Role="ProductQuantity" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Packing">
-              <PropertyRef Name="PackingId" />
-            </Principal>
-            <Dependent Role="ProductQuantity">
-              <PropertyRef Name="PackingId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProductQuantities_Products">
-          <End Type="pharmaModel.Product" Role="Product" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="pharmaModel.ProductQuantity" Role="ProductQuantity" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductId" />
-            </Principal>
-            <Dependent Role="ProductQuantity">
-              <PropertyRef Name="ProductId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Products_Units">
-          <End Type="pharmaModel.Unit" Role="Unit" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="pharmaModel.Product" Role="Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Unit">
-              <PropertyRef Name="UnitId" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="UnitId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -809,6 +677,136 @@
           <Property Name="SupplierIsActive" Type="Boolean" />
           <NavigationProperty Name="Products" Relationship="pharmaModel.FK_Products_Suppliers" FromRole="Supplier" ToRole="Product" />
         </EntityType>
+        <EntityType Name="ProductQuantity">
+          <Key>
+            <PropertyRef Name="ProductQuantityId" />
+          </Key>
+          <Property Name="ProductQuantityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductQuantityDate" Type="DateTime" Precision="0" />
+          <Property Name="ProductManufactureDate" Type="DateTime" Precision="0" />
+          <Property Name="ProductQuantityExpiryDate" Type="DateTime" Precision="0" />
+          <Property Name="ProductQuantityQnty" Type="Double" />
+          <Property Name="ProductQuanitityCost" Type="Double" />
+          <Property Name="ProductQuantityPrice" Type="Double" />
+          <Property Name="ProductQuantityIsActive" Type="Boolean" />
+          <Property Name="ProductQuantityIsDiscounted" Type="Boolean" />
+          <Property Name="ProductQuantityIsExpired" Type="Boolean" />
+          <Property Name="ProductQuantityVolume" Type="Double" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="PackingId" Type="Int32" />
+          <Property Name="UnitId" Type="Int32" />
+          <NavigationProperty Name="OrderDetails" Relationship="pharmaModel.FK_OrderDetails_ProductQuantities" FromRole="ProductQuantity" ToRole="OrderDetail" />
+          <NavigationProperty Name="Packing" Relationship="pharmaModel.FK_ProductQuantities_Packings" FromRole="ProductQuantity" ToRole="Packing" />
+          <NavigationProperty Name="Product" Relationship="pharmaModel.FK_ProductQuantities_Products" FromRole="ProductQuantity" ToRole="Product" />
+          <NavigationProperty Name="Unit" Relationship="pharmaModel.FK_ProductQuantities_Units" FromRole="ProductQuantity" ToRole="Unit" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductLotNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductGenericName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductInstruction" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProductPicture" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductAlertCount" Type="Double" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="SupplierId" Type="Int32" />
+          <Property Name="DrugTypeId" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="pharmaModel.FK_Products_Categories" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="DrugType" Relationship="pharmaModel.FK_Products_DrugTypes" FromRole="Product" ToRole="DrugType" />
+          <NavigationProperty Name="ProductQuantities" Relationship="pharmaModel.FK_ProductQuantities_Products" FromRole="Product" ToRole="ProductQuantity" />
+          <NavigationProperty Name="Supplier" Relationship="pharmaModel.FK_Products_Suppliers" FromRole="Product" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="UnitId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductQuantities" Relationship="pharmaModel.FK_ProductQuantities_Units" FromRole="Unit" ToRole="ProductQuantity" />
+        </EntityType>
+        <Association Name="FK_Products_Categories">
+          <End Type="pharmaModel.Category" Role="Category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="pharmaModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_DrugTypes">
+          <End Type="pharmaModel.DrugType" Role="DrugType" Multiplicity="0..1" />
+          <End Type="pharmaModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DrugType">
+              <PropertyRef Name="DrugTypeId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="DrugTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderDetails_ProductQuantities">
+          <End Type="pharmaModel.ProductQuantity" Role="ProductQuantity" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="pharmaModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductQuantity">
+              <PropertyRef Name="ProductQuantityId" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ProductQuantityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductQuantities_Packings">
+          <End Type="pharmaModel.Packing" Role="Packing" Multiplicity="0..1" />
+          <End Type="pharmaModel.ProductQuantity" Role="ProductQuantity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Packing">
+              <PropertyRef Name="PackingId" />
+            </Principal>
+            <Dependent Role="ProductQuantity">
+              <PropertyRef Name="PackingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductQuantities_Products">
+          <End Type="pharmaModel.Product" Role="Product" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="pharmaModel.ProductQuantity" Role="ProductQuantity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="ProductQuantity">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductQuantities_Units">
+          <End Type="pharmaModel.Unit" Role="Unit" Multiplicity="0..1" />
+          <End Type="pharmaModel.ProductQuantity" Role="ProductQuantity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="UnitId" />
+            </Principal>
+            <Dependent Role="ProductQuantity">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Products_Suppliers">
           <End Type="pharmaModel.Supplier" Role="Supplier" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -874,14 +872,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Units">
-            <EntityTypeMapping TypeName="pharmaModel.Unit">
-              <MappingFragment StoreEntitySet="Units">
-                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
-                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="pharmaModel.User">
               <MappingFragment StoreEntitySet="Users">
@@ -924,43 +914,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ProductQuantities">
-            <EntityTypeMapping TypeName="pharmaModel.ProductQuantity">
-              <MappingFragment StoreEntitySet="ProductQuantities">
-                <ScalarProperty Name="PackingId" ColumnName="PackingId" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="ProductQuantityIsExpired" ColumnName="ProductQuantityIsExpired" />
-                <ScalarProperty Name="ProductQuantityIsDiscounted" ColumnName="ProductQuantityIsDiscounted" />
-                <ScalarProperty Name="ProductQuantityIsActive" ColumnName="ProductQuantityIsActive" />
-                <ScalarProperty Name="ProductQuantityPrice" ColumnName="ProductQuantityPrice" />
-                <ScalarProperty Name="ProductQuanitityCost" ColumnName="ProductQuanitityCost" />
-                <ScalarProperty Name="ProductQuantityQnty" ColumnName="ProductQuantityQnty" />
-                <ScalarProperty Name="ProductQuantityExpiryDate" ColumnName="ProductQuantityExpiryDate" />
-                <ScalarProperty Name="ProductManufactureDate" ColumnName="ProductManufactureDate" />
-                <ScalarProperty Name="ProductQuantityDate" ColumnName="ProductQuantityDate" />
-                <ScalarProperty Name="ProductQuantityId" ColumnName="ProductQuantityId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="pharmaModel.Product">
-              <MappingFragment StoreEntitySet="Products">
-                <ScalarProperty Name="DrugTypeId" ColumnName="DrugTypeId" />
-                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
-                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
-                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
-                <ScalarProperty Name="ProductAlertCount" ColumnName="ProductAlertCount" />
-                <ScalarProperty Name="ProductPicture" ColumnName="ProductPicture" />
-                <ScalarProperty Name="ProductInstruction" ColumnName="ProductInstruction" />
-                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
-                <ScalarProperty Name="ProductGenericName" ColumnName="ProductGenericName" />
-                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-                <ScalarProperty Name="ProductLotNo" ColumnName="ProductLotNo" />
-                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="VoidReasons">
             <EntityTypeMapping TypeName="pharmaModel.VoidReason">
               <MappingFragment StoreEntitySet="VoidReasons">
@@ -992,6 +945,52 @@
                 <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
                 <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
                 <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductQuantities">
+            <EntityTypeMapping TypeName="pharmaModel.ProductQuantity">
+              <MappingFragment StoreEntitySet="ProductQuantities">
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="PackingId" ColumnName="PackingId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductQuantityVolume" ColumnName="ProductQuantityVolume" />
+                <ScalarProperty Name="ProductQuantityIsExpired" ColumnName="ProductQuantityIsExpired" />
+                <ScalarProperty Name="ProductQuantityIsDiscounted" ColumnName="ProductQuantityIsDiscounted" />
+                <ScalarProperty Name="ProductQuantityIsActive" ColumnName="ProductQuantityIsActive" />
+                <ScalarProperty Name="ProductQuantityPrice" ColumnName="ProductQuantityPrice" />
+                <ScalarProperty Name="ProductQuanitityCost" ColumnName="ProductQuanitityCost" />
+                <ScalarProperty Name="ProductQuantityQnty" ColumnName="ProductQuantityQnty" />
+                <ScalarProperty Name="ProductQuantityExpiryDate" ColumnName="ProductQuantityExpiryDate" />
+                <ScalarProperty Name="ProductManufactureDate" ColumnName="ProductManufactureDate" />
+                <ScalarProperty Name="ProductQuantityDate" ColumnName="ProductQuantityDate" />
+                <ScalarProperty Name="ProductQuantityId" ColumnName="ProductQuantityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="pharmaModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="DrugTypeId" ColumnName="DrugTypeId" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ProductAlertCount" ColumnName="ProductAlertCount" />
+                <ScalarProperty Name="ProductPicture" ColumnName="ProductPicture" />
+                <ScalarProperty Name="ProductInstruction" ColumnName="ProductInstruction" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductGenericName" ColumnName="ProductGenericName" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductLotNo" ColumnName="ProductLotNo" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="pharmaModel.Unit">
+              <MappingFragment StoreEntitySet="Units">
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

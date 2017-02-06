@@ -37,7 +37,6 @@
             System.Windows.Forms.Label productInstructionLabel;
             System.Windows.Forms.Label productLotNoLabel;
             System.Windows.Forms.Label productNameLabel;
-            System.Windows.Forms.Label unitIdLabel;
             System.Windows.Forms.Label drugTypeIdLabel;
             System.Windows.Forms.Label supplierIdLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductUpdateForm));
@@ -67,8 +66,6 @@
             this.productNameTextBox = new System.Windows.Forms.TextBox();
             this.categoryIdComboBox = new System.Windows.Forms.ComboBox();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unitIdComboBox = new System.Windows.Forms.ComboBox();
-            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.drugTypeIdComboBox = new System.Windows.Forms.ComboBox();
             this.drugTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierIdComboBox = new System.Windows.Forms.ComboBox();
@@ -81,14 +78,12 @@
             productInstructionLabel = new System.Windows.Forms.Label();
             productLotNoLabel = new System.Windows.Forms.Label();
             productNameLabel = new System.Windows.Forms.Label();
-            unitIdLabel = new System.Windows.Forms.Label();
             drugTypeIdLabel = new System.Windows.Forms.Label();
             supplierIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
             this.productBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -105,11 +100,11 @@
             // productAlertCountLabel
             // 
             productAlertCountLabel.AutoSize = true;
-            productAlertCountLabel.Location = new System.Drawing.Point(17, 299);
+            productAlertCountLabel.Location = new System.Drawing.Point(17, 221);
             productAlertCountLabel.Name = "productAlertCountLabel";
-            productAlertCountLabel.Size = new System.Drawing.Size(102, 13);
+            productAlertCountLabel.Size = new System.Drawing.Size(62, 13);
             productAlertCountLabel.TabIndex = 7;
-            productAlertCountLabel.Text = "Product Alert Count:";
+            productAlertCountLabel.Text = "Alert Count:";
             // 
             // productCodeLabel
             // 
@@ -165,19 +160,10 @@
             productNameLabel.TabIndex = 21;
             productNameLabel.Text = "Product Name:";
             // 
-            // unitIdLabel
-            // 
-            unitIdLabel.AutoSize = true;
-            unitIdLabel.Location = new System.Drawing.Point(356, 194);
-            unitIdLabel.Name = "unitIdLabel";
-            unitIdLabel.Size = new System.Drawing.Size(29, 13);
-            unitIdLabel.TabIndex = 27;
-            unitIdLabel.Text = "Unit:";
-            // 
             // drugTypeIdLabel
             // 
             drugTypeIdLabel.AutoSize = true;
-            drugTypeIdLabel.Location = new System.Drawing.Point(17, 219);
+            drugTypeIdLabel.Location = new System.Drawing.Point(356, 192);
             drugTypeIdLabel.Name = "drugTypeIdLabel";
             drugTypeIdLabel.Size = new System.Drawing.Size(60, 13);
             drugTypeIdLabel.TabIndex = 28;
@@ -349,10 +335,11 @@
             // productAlertCountTextBox
             // 
             this.productAlertCountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductAlertCount", true));
-            this.productAlertCountTextBox.Location = new System.Drawing.Point(141, 297);
+            this.productAlertCountTextBox.Location = new System.Drawing.Point(141, 218);
             this.productAlertCountTextBox.Name = "productAlertCountTextBox";
             this.productAlertCountTextBox.Size = new System.Drawing.Size(197, 20);
-            this.productAlertCountTextBox.TabIndex = 10;
+            this.productAlertCountTextBox.TabIndex = 6;
+            this.productAlertCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // productCodeTextBox
             // 
@@ -418,32 +405,16 @@
             // 
             this.categoryBindingSource.DataSource = typeof(PharmaPos.data.Category);
             // 
-            // unitIdComboBox
-            // 
-            this.unitIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "UnitId", true));
-            this.unitIdComboBox.DataSource = this.unitBindingSource;
-            this.unitIdComboBox.DisplayMember = "UnitName";
-            this.unitIdComboBox.FormattingEnabled = true;
-            this.unitIdComboBox.Location = new System.Drawing.Point(418, 191);
-            this.unitIdComboBox.Name = "unitIdComboBox";
-            this.unitIdComboBox.Size = new System.Drawing.Size(197, 21);
-            this.unitIdComboBox.TabIndex = 5;
-            this.unitIdComboBox.ValueMember = "UnitId";
-            // 
-            // unitBindingSource
-            // 
-            this.unitBindingSource.DataSource = typeof(PharmaPos.data.Unit);
-            // 
             // drugTypeIdComboBox
             // 
             this.drugTypeIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "DrugTypeId", true));
             this.drugTypeIdComboBox.DataSource = this.drugTypeBindingSource;
             this.drugTypeIdComboBox.DisplayMember = "DrugTypeName";
             this.drugTypeIdComboBox.FormattingEnabled = true;
-            this.drugTypeIdComboBox.Location = new System.Drawing.Point(141, 216);
+            this.drugTypeIdComboBox.Location = new System.Drawing.Point(418, 191);
             this.drugTypeIdComboBox.Name = "drugTypeIdComboBox";
             this.drugTypeIdComboBox.Size = new System.Drawing.Size(197, 21);
-            this.drugTypeIdComboBox.TabIndex = 6;
+            this.drugTypeIdComboBox.TabIndex = 5;
             this.drugTypeIdComboBox.ValueMember = "DrugTypeId";
             // 
             // drugTypeBindingSource
@@ -471,13 +442,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(765, 349);
+            this.ClientSize = new System.Drawing.Size(765, 322);
             this.Controls.Add(supplierIdLabel);
             this.Controls.Add(this.supplierIdComboBox);
             this.Controls.Add(drugTypeIdLabel);
             this.Controls.Add(this.drugTypeIdComboBox);
-            this.Controls.Add(unitIdLabel);
-            this.Controls.Add(this.unitIdComboBox);
             this.Controls.Add(this.categoryIdComboBox);
             this.Controls.Add(categoryIdLabel);
             this.Controls.Add(productAlertCountLabel);
@@ -504,7 +473,6 @@
             this.productBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -537,11 +505,9 @@
         private System.Windows.Forms.TextBox productLotNoTextBox;
         private System.Windows.Forms.TextBox productNameTextBox;
         private System.Windows.Forms.ComboBox categoryIdComboBox;
-        private System.Windows.Forms.ComboBox unitIdComboBox;
         private System.Windows.Forms.ComboBox drugTypeIdComboBox;
         private System.Windows.Forms.ComboBox supplierIdComboBox;
         private System.Windows.Forms.BindingSource categoryBindingSource;
-        private System.Windows.Forms.BindingSource unitBindingSource;
         private System.Windows.Forms.BindingSource drugTypeBindingSource;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

@@ -16,6 +16,13 @@ namespace PharmaPos.forms
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            productQuantityDateDateTimePicker.Value = DateTime.Now;
+            if (packingIdComboBox.Items.Count > 0)
+                packingIdComboBox.SelectedIndex = 0;
+
+            if (unitIdComboBox.Items.Count > 0)
+                unitIdComboBox.SelectedIndex = 0;
+
             productQuantityDateDateTimePicker.Focus();
         }
 
@@ -30,7 +37,7 @@ namespace PharmaPos.forms
             InitProduct();
             InitRecord();
             if (ProductQuantity != null)
-            productQuantityBindingSource.DataSource = ProductQuantity;
+                productQuantityBindingSource.DataSource = ProductQuantity;
 
         }
 
@@ -44,6 +51,7 @@ namespace PharmaPos.forms
         {
             Cursor.Current = Cursors.WaitCursor;
             packingBindingSource.DataSource = PackingManager.GetAll();
+            unitBindingSource.DataSource = UnitManager.GetAll();
             Cursor.Current = Cursors.Default;
         }
 

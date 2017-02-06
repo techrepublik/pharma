@@ -69,8 +69,10 @@
     <Property Name="ProductQuantityIsActive" Type="bit" />
     <Property Name="ProductQuantityIsDiscounted" Type="bit" />
     <Property Name="ProductQuantityIsExpired" Type="bit" />
+    <Property Name="ProductQuantityVolume" Type="float" />
     <Property Name="ProductId" Type="int" />
     <Property Name="PackingId" Type="int" />
+    <Property Name="UnitId" Type="int" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
@@ -85,7 +87,6 @@
     <Property Name="ProductInstruction" Type="varchar(max)" />
     <Property Name="ProductPicture" Type="image" />
     <Property Name="ProductAlertCount" Type="float" />
-    <Property Name="UnitId" Type="int" />
     <Property Name="CategoryId" Type="int" />
     <Property Name="SupplierId" Type="int" />
     <Property Name="DrugTypeId" Type="int" />
@@ -232,6 +233,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProductQuantities_Units">
+    <End Role="Units" Type="Self.Units" Multiplicity="0..1" />
+    <End Role="ProductQuantities" Type="Self.ProductQuantities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Units">
+        <PropertyRef Name="UnitId" />
+      </Principal>
+      <Dependent Role="ProductQuantities">
+        <PropertyRef Name="UnitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Products_Categories">
     <End Role="Categories" Type="Self.Categories" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -269,20 +282,6 @@
       </Principal>
       <Dependent Role="Products">
         <PropertyRef Name="SupplierId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Products_Units">
-    <End Role="Units" Type="Self.Units" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Products" Type="Self.Products" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Units">
-        <PropertyRef Name="UnitId" />
-      </Principal>
-      <Dependent Role="Products">
-        <PropertyRef Name="UnitId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -365,6 +364,10 @@
       <End Role="Products" EntitySet="Products" />
       <End Role="ProductQuantities" EntitySet="ProductQuantities" />
     </AssociationSet>
+    <AssociationSet Name="FK_ProductQuantities_Units" Association="Self.FK_ProductQuantities_Units">
+      <End Role="Units" EntitySet="Units" />
+      <End Role="ProductQuantities" EntitySet="ProductQuantities" />
+    </AssociationSet>
     <AssociationSet Name="FK_Products_Categories" Association="Self.FK_Products_Categories">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Products" EntitySet="Products" />
@@ -375,10 +378,6 @@
     </AssociationSet>
     <AssociationSet Name="FK_Products_Suppliers" Association="Self.FK_Products_Suppliers">
       <End Role="Suppliers" EntitySet="Suppliers" />
-      <End Role="Products" EntitySet="Products" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Products_Units" Association="Self.FK_Products_Units">
-      <End Role="Units" EntitySet="Units" />
       <End Role="Products" EntitySet="Products" />
     </AssociationSet>
     <AssociationSet Name="FK_Receipts_Orders" Association="Self.FK_Receipts_Orders">

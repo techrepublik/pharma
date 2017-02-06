@@ -25,8 +25,10 @@ namespace PharmaPos.dal.man
                 ProductQuantityIsActive = productQuantity.ProductQuantityIsActive,
                 ProductQuantityIsDiscounted = productQuantity.ProductQuantityIsDiscounted,
                 ProductQuantityIsExpired = productQuantity.ProductQuantityIsExpired,
+                ProductQuantityVolume = productQuantity.ProductQuantityVolume,
                 ProductId = productQuantity.ProductId,
-                PackingId = productQuantity.PackingId
+                PackingId = productQuantity.PackingId,
+                UnitId = productQuantity.UnitId
             };
 
             using (_d = new DataRepository<ProductQuantity>())

@@ -23,7 +23,6 @@ namespace PharmaPos.dal.man
                 ProductPicture = product.ProductPicture,
                 ProductQuantities = product.ProductQuantities,
                 CategoryId = product.CategoryId,
-                UnitId = product.UnitId,
                 SupplierId = product.SupplierId,
                 DrugTypeId = product.DrugTypeId
             };

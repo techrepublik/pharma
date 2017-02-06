@@ -30,12 +30,15 @@ namespace PharmaPos.data
         public Nullable<bool> ProductQuantityIsActive { get; set; }
         public Nullable<bool> ProductQuantityIsDiscounted { get; set; }
         public Nullable<bool> ProductQuantityIsExpired { get; set; }
+        public Nullable<double> ProductQuantityVolume { get; set; }
         public Nullable<int> ProductId { get; set; }
         public Nullable<int> PackingId { get; set; }
+        public Nullable<int> UnitId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual Packing Packing { get; set; }
         public virtual Product Product { get; set; }
+        public virtual Unit Unit { get; set; }
     }
 }

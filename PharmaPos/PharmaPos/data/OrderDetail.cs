@@ -29,8 +29,8 @@ namespace PharmaPos.data
         public Nullable<int> OrderId { get; set; }
     
         public virtual Order Order { get; set; }
-        public virtual ProductQuantity ProductQuantity { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Void> Voids { get; set; }
+        public virtual ProductQuantity ProductQuantity { get; set; }
     }
 }
