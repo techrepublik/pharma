@@ -36,12 +36,17 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.productDataGridView = new System.Windows.Forms.DataGridView();
+            this.productQuantityDataGridView = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButtonAddUpdateQnty = new System.Windows.Forms.ToolStripButton();
             this.productBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -49,9 +54,6 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.productBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.productDataGridView = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.productQuantityDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -74,30 +76,30 @@
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.packingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.productQuantityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonAddUpdateQnty = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productQuantityDataGridView)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
             this.productBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productQuantityDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -146,6 +148,95 @@
             this.splitContainer1.SplitterDistance = 241;
             this.splitContainer1.TabIndex = 3;
             // 
+            // productDataGridView
+            // 
+            this.productDataGridView.AllowUserToAddRows = false;
+            this.productDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.productDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.productDataGridView.AutoGenerateColumns = false;
+            this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.productDataGridView.DataSource = this.productBindingSource;
+            this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.productDataGridView.Name = "productDataGridView";
+            this.productDataGridView.ReadOnly = true;
+            this.productDataGridView.RowHeadersWidth = 30;
+            this.productDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.productDataGridView.Size = new System.Drawing.Size(1066, 241);
+            this.productDataGridView.TabIndex = 0;
+            this.productDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.productDataGridView_DataError);
+            // 
+            // productQuantityDataGridView
+            // 
+            this.productQuantityDataGridView.AllowUserToAddRows = false;
+            this.productQuantityDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.productQuantityDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.productQuantityDataGridView.AutoGenerateColumns = false;
+            this.productQuantityDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productQuantityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21});
+            this.productQuantityDataGridView.DataSource = this.productQuantityBindingSource;
+            this.productQuantityDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productQuantityDataGridView.Location = new System.Drawing.Point(0, 29);
+            this.productQuantityDataGridView.Name = "productQuantityDataGridView";
+            this.productQuantityDataGridView.ReadOnly = true;
+            this.productQuantityDataGridView.RowHeadersWidth = 30;
+            this.productQuantityDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.productQuantityDataGridView.Size = new System.Drawing.Size(1066, 181);
+            this.productQuantityDataGridView.TabIndex = 1;
+            this.productQuantityDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.productQuantityDataGridView_DataError);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.toolStrip1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1066, 29);
+            this.panel2.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddUpdateQnty});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1066, 25);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonAddUpdateQnty
+            // 
+            this.toolStripButtonAddUpdateQnty.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddUpdateQnty.Image")));
+            this.toolStripButtonAddUpdateQnty.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAddUpdateQnty.Name = "toolStripButtonAddUpdateQnty";
+            this.toolStripButtonAddUpdateQnty.Size = new System.Drawing.Size(186, 22);
+            this.toolStripButtonAddUpdateQnty.Text = "&Add/Update Product Quantity";
+            this.toolStripButtonAddUpdateQnty.Click += new System.EventHandler(this.toolStripButtonAddUpdateQnty_Click);
+            // 
             // productBindingNavigator
             // 
             this.productBindingNavigator.AddNewItem = null;
@@ -175,6 +266,13 @@
             this.productBindingNavigator.Size = new System.Drawing.Size(1066, 25);
             this.productBindingNavigator.TabIndex = 4;
             this.productBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -208,16 +306,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -240,7 +331,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
@@ -259,6 +350,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(60, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // productBindingNavigatorSaveItem
             // 
@@ -267,72 +359,7 @@
             this.productBindingNavigatorSaveItem.Name = "productBindingNavigatorSaveItem";
             this.productBindingNavigatorSaveItem.Size = new System.Drawing.Size(78, 22);
             this.productBindingNavigatorSaveItem.Text = "Save Data";
-            // 
-            // productDataGridView
-            // 
-            this.productDataGridView.AllowUserToAddRows = false;
-            this.productDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.productDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.productDataGridView.AutoGenerateColumns = false;
-            this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.productDataGridView.DataSource = this.productBindingSource;
-            this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.productDataGridView.Name = "productDataGridView";
-            this.productDataGridView.ReadOnly = true;
-            this.productDataGridView.RowHeadersWidth = 30;
-            this.productDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productDataGridView.Size = new System.Drawing.Size(1066, 241);
-            this.productDataGridView.TabIndex = 0;
-            this.productDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.productDataGridView_DataError);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.toolStrip1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1066, 29);
-            this.panel2.TabIndex = 0;
-            // 
-            // productQuantityDataGridView
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.productQuantityDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.productQuantityDataGridView.AutoGenerateColumns = false;
-            this.productQuantityDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productQuantityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21});
-            this.productQuantityDataGridView.DataSource = this.productQuantityBindingSource;
-            this.productQuantityDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productQuantityDataGridView.Location = new System.Drawing.Point(0, 29);
-            this.productQuantityDataGridView.Name = "productQuantityDataGridView";
-            this.productQuantityDataGridView.RowHeadersWidth = 30;
-            this.productQuantityDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productQuantityDataGridView.Size = new System.Drawing.Size(1066, 181);
-            this.productQuantityDataGridView.TabIndex = 1;
+            this.productBindingNavigatorSaveItem.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -460,54 +487,74 @@
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(PharmaPos.data.Product);
+            this.productBindingSource.CurrentChanged += new System.EventHandler(this.productBindingSource_CurrentChanged);
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "ProductQuantityDate";
             this.dataGridViewTextBoxColumn13.HeaderText = "Date Entry";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "ProductManufactureDate";
             this.dataGridViewTextBoxColumn14.HeaderText = "Manu Date";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "ProductQuantityExpiryDate";
             this.dataGridViewTextBoxColumn15.HeaderText = "Expiry Date";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.DataPropertyName = "ProductQuantityQnty";
             this.dataGridViewTextBoxColumn16.HeaderText = "Qnty";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.DataPropertyName = "ProductQuanitityCost";
             this.dataGridViewTextBoxColumn17.HeaderText = "Cost";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.DataPropertyName = "ProductQuantityPrice";
             this.dataGridViewTextBoxColumn18.HeaderText = "Price";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn23
             // 
             this.dataGridViewTextBoxColumn23.DataPropertyName = "PackingId";
+            this.dataGridViewTextBoxColumn23.DataSource = this.packingBindingSource;
+            this.dataGridViewTextBoxColumn23.DisplayMember = "PackingName";
+            this.dataGridViewTextBoxColumn23.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn23.HeaderText = "Packing";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn23.ValueMember = "PackingId";
+            this.dataGridViewTextBoxColumn23.Width = 150;
+            // 
+            // packingBindingSource
+            // 
+            this.packingBindingSource.DataSource = typeof(PharmaPos.data.Packing);
             // 
             // dataGridViewTextBoxColumn19
             // 
             this.dataGridViewTextBoxColumn19.DataPropertyName = "ProductQuantityIsActive";
             this.dataGridViewTextBoxColumn19.HeaderText = "Active";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
             this.dataGridViewTextBoxColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn19.Width = 50;
@@ -517,6 +564,7 @@
             this.dataGridViewTextBoxColumn20.DataPropertyName = "ProductQuantityIsDiscounted";
             this.dataGridViewTextBoxColumn20.HeaderText = "Discounted";
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
             this.dataGridViewTextBoxColumn20.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn20.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn20.Width = 50;
@@ -526,6 +574,7 @@
             this.dataGridViewTextBoxColumn21.DataPropertyName = "ProductQuantityIsExpired";
             this.dataGridViewTextBoxColumn21.HeaderText = "Expired";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
             this.dataGridViewTextBoxColumn21.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn21.Width = 50;
@@ -533,24 +582,6 @@
             // productQuantityBindingSource
             // 
             this.productQuantityBindingSource.DataSource = typeof(PharmaPos.data.ProductQuantity);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonAddUpdateQnty});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1066, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButtonAddUpdateQnty
-            // 
-            this.toolStripButtonAddUpdateQnty.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddUpdateQnty.Image")));
-            this.toolStripButtonAddUpdateQnty.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonAddUpdateQnty.Name = "toolStripButtonAddUpdateQnty";
-            this.toolStripButtonAddUpdateQnty.Size = new System.Drawing.Size(186, 22);
-            this.toolStripButtonAddUpdateQnty.Text = "&Add/Update Product Quantity";
             // 
             // ProductListForm
             // 
@@ -570,21 +601,22 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productQuantityDataGridView)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).EndInit();
             this.productBindingNavigator.ResumeLayout(false);
             this.productBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productQuantityDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,16 +645,6 @@
         private System.Windows.Forms.ToolStripButton productBindingNavigatorSaveItem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView productQuantityDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.BindingSource productQuantityBindingSource;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private System.Windows.Forms.BindingSource categoryBindingSource;
@@ -641,5 +663,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButtonAddUpdateQnty;
+        private System.Windows.Forms.BindingSource packingBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn21;
     }
 }

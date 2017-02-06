@@ -43,22 +43,20 @@ namespace PharmaPos.forms
 
         private void productBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if (productBindingSource != null)
+            if (productBindingSource == null) return;
+            Validate();
+            productBindingSource.EndEdit();
+            var iResult = ProductManager.Save((Product)productBindingSource.Current);
+            if (iResult > 0)
             {
-                Validate();
-                productBindingSource.EndEdit();
-                var iResult = ProductManager.Save((Product)productBindingSource.Current);
-                if (iResult > 0)
-                {
-                    MessageBox.Show(@"Record was successfully saved.", @"Save", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    productCodeTextBox.Focus();
-                }
-                else
-                {
-                    MessageBox.Show(@"Error occurred in saving.", @"Save", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
+                MessageBox.Show(@"Record was successfully saved.", @"Save", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                productCodeTextBox.Focus();
+            }
+            else
+            {
+                MessageBox.Show(@"Error occurred in saving.", @"Save", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 

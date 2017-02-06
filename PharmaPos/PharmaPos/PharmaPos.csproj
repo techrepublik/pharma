@@ -64,6 +64,7 @@
     <Compile Include="dal\man\OrderManager.cs" />
     <Compile Include="dal\man\PackingManager.cs" />
     <Compile Include="dal\man\ProductManager.cs" />
+    <Compile Include="dal\man\ProductQuantityManager.cs" />
     <Compile Include="dal\man\ReceiptManager.cs" />
     <Compile Include="dal\man\SupplierManager.cs" />
     <Compile Include="dal\man\UnitManager.cs" />

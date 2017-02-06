@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductQntyUpdateForm));
             System.Windows.Forms.Label productManufactureDateLabel;
             System.Windows.Forms.Label productQuanitityCostLabel;
             System.Windows.Forms.Label productQuantityDateLabel;
@@ -40,19 +39,21 @@
             System.Windows.Forms.Label productQuantityPriceLabel;
             System.Windows.Forms.Label productQuantityQntyLabel;
             System.Windows.Forms.Label label1;
+            System.Windows.Forms.Label packingIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductQntyUpdateForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.productQuantityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productQuantityBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.productQuantityBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.productManufactureDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -65,6 +66,8 @@
             this.productQuantityPriceTextBox = new System.Windows.Forms.TextBox();
             this.productQuantityQntyTextBox = new System.Windows.Forms.TextBox();
             this.labelProductName = new System.Windows.Forms.Label();
+            this.packingIdComboBox = new System.Windows.Forms.ComboBox();
+            this.packingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             productManufactureDateLabel = new System.Windows.Forms.Label();
             productQuanitityCostLabel = new System.Windows.Forms.Label();
             productQuantityDateLabel = new System.Windows.Forms.Label();
@@ -75,10 +78,111 @@
             productQuantityPriceLabel = new System.Windows.Forms.Label();
             productQuantityQntyLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            packingIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingNavigator)).BeginInit();
             this.productQuantityBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // productManufactureDateLabel
+            // 
+            productManufactureDateLabel.AutoSize = true;
+            productManufactureDateLabel.Location = new System.Drawing.Point(19, 147);
+            productManufactureDateLabel.Name = "productManufactureDateLabel";
+            productManufactureDateLabel.Size = new System.Drawing.Size(96, 13);
+            productManufactureDateLabel.TabIndex = 6;
+            productManufactureDateLabel.Text = "Manufacture Date:";
+            // 
+            // productQuanitityCostLabel
+            // 
+            productQuanitityCostLabel.AutoSize = true;
+            productQuanitityCostLabel.Location = new System.Drawing.Point(19, 172);
+            productQuanitityCostLabel.Name = "productQuanitityCostLabel";
+            productQuanitityCostLabel.Size = new System.Drawing.Size(31, 13);
+            productQuanitityCostLabel.TabIndex = 8;
+            productQuanitityCostLabel.Text = "Cost:";
+            // 
+            // productQuantityDateLabel
+            // 
+            productQuantityDateLabel.AutoSize = true;
+            productQuantityDateLabel.Location = new System.Drawing.Point(19, 121);
+            productQuantityDateLabel.Name = "productQuantityDateLabel";
+            productQuantityDateLabel.Size = new System.Drawing.Size(60, 13);
+            productQuantityDateLabel.TabIndex = 10;
+            productQuantityDateLabel.Text = "Entry Date:";
+            // 
+            // productQuantityExpiryDateLabel
+            // 
+            productQuantityExpiryDateLabel.AutoSize = true;
+            productQuantityExpiryDateLabel.Location = new System.Drawing.Point(349, 147);
+            productQuantityExpiryDateLabel.Name = "productQuantityExpiryDateLabel";
+            productQuantityExpiryDateLabel.Size = new System.Drawing.Size(64, 13);
+            productQuantityExpiryDateLabel.TabIndex = 12;
+            productQuantityExpiryDateLabel.Text = "Expiry Date:";
+            // 
+            // productQuantityIsActiveLabel
+            // 
+            productQuantityIsActiveLabel.AutoSize = true;
+            productQuantityIsActiveLabel.Location = new System.Drawing.Point(19, 226);
+            productQuantityIsActiveLabel.Name = "productQuantityIsActiveLabel";
+            productQuantityIsActiveLabel.Size = new System.Drawing.Size(40, 13);
+            productQuantityIsActiveLabel.TabIndex = 16;
+            productQuantityIsActiveLabel.Text = "Active:";
+            // 
+            // productQuantityIsDiscountedLabel
+            // 
+            productQuantityIsDiscountedLabel.AutoSize = true;
+            productQuantityIsDiscountedLabel.Location = new System.Drawing.Point(19, 254);
+            productQuantityIsDiscountedLabel.Name = "productQuantityIsDiscountedLabel";
+            productQuantityIsDiscountedLabel.Size = new System.Drawing.Size(64, 13);
+            productQuantityIsDiscountedLabel.TabIndex = 18;
+            productQuantityIsDiscountedLabel.Text = "Discounted:";
+            // 
+            // productQuantityIsExpiredLabel
+            // 
+            productQuantityIsExpiredLabel.AutoSize = true;
+            productQuantityIsExpiredLabel.Location = new System.Drawing.Point(19, 281);
+            productQuantityIsExpiredLabel.Name = "productQuantityIsExpiredLabel";
+            productQuantityIsExpiredLabel.Size = new System.Drawing.Size(45, 13);
+            productQuantityIsExpiredLabel.TabIndex = 20;
+            productQuantityIsExpiredLabel.Text = "Expired:";
+            // 
+            // productQuantityPriceLabel
+            // 
+            productQuantityPriceLabel.AutoSize = true;
+            productQuantityPriceLabel.Location = new System.Drawing.Point(349, 172);
+            productQuantityPriceLabel.Name = "productQuantityPriceLabel";
+            productQuantityPriceLabel.Size = new System.Drawing.Size(68, 13);
+            productQuantityPriceLabel.TabIndex = 22;
+            productQuantityPriceLabel.Text = "Selling Price:";
+            // 
+            // productQuantityQntyLabel
+            // 
+            productQuantityQntyLabel.AutoSize = true;
+            productQuantityQntyLabel.Location = new System.Drawing.Point(19, 198);
+            productQuantityQntyLabel.Name = "productQuantityQntyLabel";
+            productQuantityQntyLabel.Size = new System.Drawing.Size(49, 13);
+            productQuantityQntyLabel.TabIndex = 24;
+            productQuantityQntyLabel.Text = "Quantity:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(19, 86);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(47, 13);
+            label1.TabIndex = 26;
+            label1.Text = "Product:";
+            // 
+            // packingIdLabel
+            // 
+            packingIdLabel.AutoSize = true;
+            packingIdLabel.Location = new System.Drawing.Point(349, 198);
+            packingIdLabel.Name = "packingIdLabel";
+            packingIdLabel.Size = new System.Drawing.Size(49, 13);
+            packingIdLabel.TabIndex = 27;
+            packingIdLabel.Text = "Packing:";
             // 
             // panel1
             // 
@@ -86,7 +190,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(609, 40);
+            this.panel1.Size = new System.Drawing.Size(615, 40);
             this.panel1.TabIndex = 1;
             // 
             // productQuantityBindingSource
@@ -120,9 +224,25 @@
             this.productQuantityBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.productQuantityBindingNavigator.Name = "productQuantityBindingNavigator";
             this.productQuantityBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productQuantityBindingNavigator.Size = new System.Drawing.Size(609, 25);
+            this.productQuantityBindingNavigator.Size = new System.Drawing.Size(615, 25);
             this.productQuantityBindingNavigator.TabIndex = 2;
             this.productQuantityBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(74, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -156,16 +276,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -188,17 +301,8 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(74, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -207,6 +311,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(60, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // productQuantityBindingNavigatorSaveItem
             // 
@@ -215,15 +320,7 @@
             this.productQuantityBindingNavigatorSaveItem.Name = "productQuantityBindingNavigatorSaveItem";
             this.productQuantityBindingNavigatorSaveItem.Size = new System.Drawing.Size(78, 22);
             this.productQuantityBindingNavigatorSaveItem.Text = "Save Data";
-            // 
-            // productManufactureDateLabel
-            // 
-            productManufactureDateLabel.AutoSize = true;
-            productManufactureDateLabel.Location = new System.Drawing.Point(19, 147);
-            productManufactureDateLabel.Name = "productManufactureDateLabel";
-            productManufactureDateLabel.Size = new System.Drawing.Size(96, 13);
-            productManufactureDateLabel.TabIndex = 6;
-            productManufactureDateLabel.Text = "Manufacture Date:";
+            this.productQuantityBindingNavigatorSaveItem.Click += new System.EventHandler(this.productQuantityBindingNavigatorSaveItem_Click);
             // 
             // productManufactureDateDateTimePicker
             // 
@@ -234,15 +331,6 @@
             this.productManufactureDateDateTimePicker.Size = new System.Drawing.Size(138, 20);
             this.productManufactureDateDateTimePicker.TabIndex = 1;
             // 
-            // productQuanitityCostLabel
-            // 
-            productQuanitityCostLabel.AutoSize = true;
-            productQuanitityCostLabel.Location = new System.Drawing.Point(19, 172);
-            productQuanitityCostLabel.Name = "productQuanitityCostLabel";
-            productQuanitityCostLabel.Size = new System.Drawing.Size(31, 13);
-            productQuanitityCostLabel.TabIndex = 8;
-            productQuanitityCostLabel.Text = "Cost:";
-            // 
             // productQuanitityCostTextBox
             // 
             this.productQuanitityCostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productQuantityBindingSource, "ProductQuanitityCost", true));
@@ -250,15 +338,7 @@
             this.productQuanitityCostTextBox.Name = "productQuanitityCostTextBox";
             this.productQuanitityCostTextBox.Size = new System.Drawing.Size(138, 20);
             this.productQuanitityCostTextBox.TabIndex = 3;
-            // 
-            // productQuantityDateLabel
-            // 
-            productQuantityDateLabel.AutoSize = true;
-            productQuantityDateLabel.Location = new System.Drawing.Point(19, 121);
-            productQuantityDateLabel.Name = "productQuantityDateLabel";
-            productQuantityDateLabel.Size = new System.Drawing.Size(60, 13);
-            productQuantityDateLabel.TabIndex = 10;
-            productQuantityDateLabel.Text = "Entry Date:";
+            this.productQuanitityCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // productQuantityDateDateTimePicker
             // 
@@ -269,103 +349,50 @@
             this.productQuantityDateDateTimePicker.Size = new System.Drawing.Size(138, 20);
             this.productQuantityDateDateTimePicker.TabIndex = 0;
             // 
-            // productQuantityExpiryDateLabel
-            // 
-            productQuantityExpiryDateLabel.AutoSize = true;
-            productQuantityExpiryDateLabel.Location = new System.Drawing.Point(349, 147);
-            productQuantityExpiryDateLabel.Name = "productQuantityExpiryDateLabel";
-            productQuantityExpiryDateLabel.Size = new System.Drawing.Size(64, 13);
-            productQuantityExpiryDateLabel.TabIndex = 12;
-            productQuantityExpiryDateLabel.Text = "Expiry Date:";
-            // 
             // productQuantityExpiryDateDateTimePicker
             // 
             this.productQuantityExpiryDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.productQuantityBindingSource, "ProductQuantityExpiryDate", true));
             this.productQuantityExpiryDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.productQuantityExpiryDateDateTimePicker.Location = new System.Drawing.Point(428, 143);
             this.productQuantityExpiryDateDateTimePicker.Name = "productQuantityExpiryDateDateTimePicker";
-            this.productQuantityExpiryDateDateTimePicker.Size = new System.Drawing.Size(138, 20);
+            this.productQuantityExpiryDateDateTimePicker.Size = new System.Drawing.Size(169, 20);
             this.productQuantityExpiryDateDateTimePicker.TabIndex = 2;
-            // 
-            // productQuantityIsActiveLabel
-            // 
-            productQuantityIsActiveLabel.AutoSize = true;
-            productQuantityIsActiveLabel.Location = new System.Drawing.Point(19, 226);
-            productQuantityIsActiveLabel.Name = "productQuantityIsActiveLabel";
-            productQuantityIsActiveLabel.Size = new System.Drawing.Size(40, 13);
-            productQuantityIsActiveLabel.TabIndex = 16;
-            productQuantityIsActiveLabel.Text = "Active:";
             // 
             // productQuantityIsActiveCheckBox
             // 
             this.productQuantityIsActiveCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productQuantityBindingSource, "ProductQuantityIsActive", true));
             this.productQuantityIsActiveCheckBox.Location = new System.Drawing.Point(161, 221);
             this.productQuantityIsActiveCheckBox.Name = "productQuantityIsActiveCheckBox";
-            this.productQuantityIsActiveCheckBox.Size = new System.Drawing.Size(200, 24);
-            this.productQuantityIsActiveCheckBox.TabIndex = 6;
+            this.productQuantityIsActiveCheckBox.Size = new System.Drawing.Size(138, 24);
+            this.productQuantityIsActiveCheckBox.TabIndex = 7;
             this.productQuantityIsActiveCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // productQuantityIsDiscountedLabel
-            // 
-            productQuantityIsDiscountedLabel.AutoSize = true;
-            productQuantityIsDiscountedLabel.Location = new System.Drawing.Point(19, 250);
-            productQuantityIsDiscountedLabel.Name = "productQuantityIsDiscountedLabel";
-            productQuantityIsDiscountedLabel.Size = new System.Drawing.Size(64, 13);
-            productQuantityIsDiscountedLabel.TabIndex = 18;
-            productQuantityIsDiscountedLabel.Text = "Discounted:";
             // 
             // productQuantityIsDiscountedCheckBox
             // 
-            this.productQuantityIsDiscountedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productQuantityBindingSource, "ProductQuantityIsDiscounted", true));
-            this.productQuantityIsDiscountedCheckBox.Location = new System.Drawing.Point(161, 245);
+            this.productQuantityIsDiscountedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productQuantityBindingSource, "PackingId", true));
+            this.productQuantityIsDiscountedCheckBox.Location = new System.Drawing.Point(161, 249);
             this.productQuantityIsDiscountedCheckBox.Name = "productQuantityIsDiscountedCheckBox";
-            this.productQuantityIsDiscountedCheckBox.Size = new System.Drawing.Size(200, 24);
-            this.productQuantityIsDiscountedCheckBox.TabIndex = 7;
+            this.productQuantityIsDiscountedCheckBox.Size = new System.Drawing.Size(138, 24);
+            this.productQuantityIsDiscountedCheckBox.TabIndex = 8;
             this.productQuantityIsDiscountedCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // productQuantityIsExpiredLabel
-            // 
-            productQuantityIsExpiredLabel.AutoSize = true;
-            productQuantityIsExpiredLabel.Location = new System.Drawing.Point(19, 271);
-            productQuantityIsExpiredLabel.Name = "productQuantityIsExpiredLabel";
-            productQuantityIsExpiredLabel.Size = new System.Drawing.Size(45, 13);
-            productQuantityIsExpiredLabel.TabIndex = 20;
-            productQuantityIsExpiredLabel.Text = "Expired:";
             // 
             // productQuantityIsExpiredCheckBox
             // 
             this.productQuantityIsExpiredCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productQuantityBindingSource, "ProductQuantityIsExpired", true));
-            this.productQuantityIsExpiredCheckBox.Location = new System.Drawing.Point(161, 266);
+            this.productQuantityIsExpiredCheckBox.Location = new System.Drawing.Point(161, 276);
             this.productQuantityIsExpiredCheckBox.Name = "productQuantityIsExpiredCheckBox";
-            this.productQuantityIsExpiredCheckBox.Size = new System.Drawing.Size(200, 24);
-            this.productQuantityIsExpiredCheckBox.TabIndex = 8;
+            this.productQuantityIsExpiredCheckBox.Size = new System.Drawing.Size(138, 24);
+            this.productQuantityIsExpiredCheckBox.TabIndex = 9;
             this.productQuantityIsExpiredCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // productQuantityPriceLabel
-            // 
-            productQuantityPriceLabel.AutoSize = true;
-            productQuantityPriceLabel.Location = new System.Drawing.Point(349, 172);
-            productQuantityPriceLabel.Name = "productQuantityPriceLabel";
-            productQuantityPriceLabel.Size = new System.Drawing.Size(68, 13);
-            productQuantityPriceLabel.TabIndex = 22;
-            productQuantityPriceLabel.Text = "Selling Price:";
             // 
             // productQuantityPriceTextBox
             // 
             this.productQuantityPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productQuantityBindingSource, "ProductQuantityPrice", true));
             this.productQuantityPriceTextBox.Location = new System.Drawing.Point(428, 169);
             this.productQuantityPriceTextBox.Name = "productQuantityPriceTextBox";
-            this.productQuantityPriceTextBox.Size = new System.Drawing.Size(138, 20);
+            this.productQuantityPriceTextBox.Size = new System.Drawing.Size(169, 20);
             this.productQuantityPriceTextBox.TabIndex = 4;
-            // 
-            // productQuantityQntyLabel
-            // 
-            productQuantityQntyLabel.AutoSize = true;
-            productQuantityQntyLabel.Location = new System.Drawing.Point(19, 198);
-            productQuantityQntyLabel.Name = "productQuantityQntyLabel";
-            productQuantityQntyLabel.Size = new System.Drawing.Size(49, 13);
-            productQuantityQntyLabel.TabIndex = 24;
-            productQuantityQntyLabel.Text = "Quantity:";
+            this.productQuantityPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // productQuantityQntyTextBox
             // 
@@ -374,15 +401,7 @@
             this.productQuantityQntyTextBox.Name = "productQuantityQntyTextBox";
             this.productQuantityQntyTextBox.Size = new System.Drawing.Size(138, 20);
             this.productQuantityQntyTextBox.TabIndex = 5;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(19, 86);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(47, 13);
-            label1.TabIndex = 26;
-            label1.Text = "Product:";
+            this.productQuantityQntyTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelProductName
             // 
@@ -392,12 +411,32 @@
             this.labelProductName.TabIndex = 27;
             this.labelProductName.Text = "...";
             // 
+            // packingIdComboBox
+            // 
+            this.packingIdComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.packingIdComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.packingIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productQuantityBindingSource, "PackingId", true));
+            this.packingIdComboBox.DataSource = this.packingBindingSource;
+            this.packingIdComboBox.DisplayMember = "PackingName";
+            this.packingIdComboBox.FormattingEnabled = true;
+            this.packingIdComboBox.Location = new System.Drawing.Point(428, 195);
+            this.packingIdComboBox.Name = "packingIdComboBox";
+            this.packingIdComboBox.Size = new System.Drawing.Size(169, 21);
+            this.packingIdComboBox.TabIndex = 6;
+            this.packingIdComboBox.ValueMember = "PackingId";
+            // 
+            // packingBindingSource
+            // 
+            this.packingBindingSource.DataSource = typeof(PharmaPos.data.Packing);
+            // 
             // ProductQntyUpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(609, 316);
+            this.ClientSize = new System.Drawing.Size(615, 316);
+            this.Controls.Add(packingIdLabel);
+            this.Controls.Add(this.packingIdComboBox);
             this.Controls.Add(this.labelProductName);
             this.Controls.Add(label1);
             this.Controls.Add(productManufactureDateLabel);
@@ -422,10 +461,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "ProductQntyUpdateForm";
             this.Text = "Product Qnty Update Form";
+            this.Load += new System.EventHandler(this.ProductQntyUpdateForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingNavigator)).EndInit();
             this.productQuantityBindingNavigator.ResumeLayout(false);
             this.productQuantityBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -458,5 +499,7 @@
         private System.Windows.Forms.TextBox productQuantityPriceTextBox;
         private System.Windows.Forms.TextBox productQuantityQntyTextBox;
         private System.Windows.Forms.Label labelProductName;
+        private System.Windows.Forms.ComboBox packingIdComboBox;
+        private System.Windows.Forms.BindingSource packingBindingSource;
     }
 }
