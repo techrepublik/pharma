@@ -16,5 +16,16 @@ namespace PharmaPos.forms
         {
             InitializeComponent();
         }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            productQuantityDateDateTimePicker.Focus();
+        }
+
+        private void productQuantityBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            if (productQuantityBindingSource != null)
+                productQuantityBindingNavigatorSaveItem.Enabled = true;
+        }
     }
 }

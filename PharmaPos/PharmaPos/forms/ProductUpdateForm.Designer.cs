@@ -105,7 +105,7 @@
             // productAlertCountLabel
             // 
             productAlertCountLabel.AutoSize = true;
-            productAlertCountLabel.Location = new System.Drawing.Point(17, 349);
+            productAlertCountLabel.Location = new System.Drawing.Point(17, 299);
             productAlertCountLabel.Name = "productAlertCountLabel";
             productAlertCountLabel.Size = new System.Drawing.Size(102, 13);
             productAlertCountLabel.TabIndex = 7;
@@ -123,7 +123,7 @@
             // productDescriptionLabel
             // 
             productDescriptionLabel.AutoSize = true;
-            productDescriptionLabel.Location = new System.Drawing.Point(17, 297);
+            productDescriptionLabel.Location = new System.Drawing.Point(17, 247);
             productDescriptionLabel.Name = "productDescriptionLabel";
             productDescriptionLabel.Size = new System.Drawing.Size(103, 13);
             productDescriptionLabel.TabIndex = 11;
@@ -141,7 +141,7 @@
             // productInstructionLabel
             // 
             productInstructionLabel.AutoSize = true;
-            productInstructionLabel.Location = new System.Drawing.Point(17, 323);
+            productInstructionLabel.Location = new System.Drawing.Point(17, 273);
             productInstructionLabel.Name = "productInstructionLabel";
             productInstructionLabel.Size = new System.Drawing.Size(99, 13);
             productInstructionLabel.TabIndex = 17;
@@ -150,11 +150,11 @@
             // productLotNoLabel
             // 
             productLotNoLabel.AutoSize = true;
-            productLotNoLabel.Location = new System.Drawing.Point(17, 271);
+            productLotNoLabel.Location = new System.Drawing.Point(356, 224);
             productLotNoLabel.Name = "productLotNoLabel";
-            productLotNoLabel.Size = new System.Drawing.Size(82, 13);
+            productLotNoLabel.Size = new System.Drawing.Size(42, 13);
             productLotNoLabel.TabIndex = 19;
-            productLotNoLabel.Text = "Product Lot No:";
+            productLotNoLabel.Text = "Lot No:";
             // 
             // productNameLabel
             // 
@@ -168,7 +168,7 @@
             // unitIdLabel
             // 
             unitIdLabel.AutoSize = true;
-            unitIdLabel.Location = new System.Drawing.Point(17, 218);
+            unitIdLabel.Location = new System.Drawing.Point(356, 194);
             unitIdLabel.Name = "unitIdLabel";
             unitIdLabel.Size = new System.Drawing.Size(29, 13);
             unitIdLabel.TabIndex = 27;
@@ -177,7 +177,7 @@
             // drugTypeIdLabel
             // 
             drugTypeIdLabel.AutoSize = true;
-            drugTypeIdLabel.Location = new System.Drawing.Point(17, 244);
+            drugTypeIdLabel.Location = new System.Drawing.Point(17, 219);
             drugTypeIdLabel.Name = "drugTypeIdLabel";
             drugTypeIdLabel.Size = new System.Drawing.Size(60, 13);
             drugTypeIdLabel.TabIndex = 28;
@@ -349,7 +349,7 @@
             // productAlertCountTextBox
             // 
             this.productAlertCountTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductAlertCount", true));
-            this.productAlertCountTextBox.Location = new System.Drawing.Point(141, 347);
+            this.productAlertCountTextBox.Location = new System.Drawing.Point(141, 297);
             this.productAlertCountTextBox.Name = "productAlertCountTextBox";
             this.productAlertCountTextBox.Size = new System.Drawing.Size(197, 20);
             this.productAlertCountTextBox.TabIndex = 10;
@@ -365,7 +365,7 @@
             // productDescriptionTextBox
             // 
             this.productDescriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductDescription", true));
-            this.productDescriptionTextBox.Location = new System.Drawing.Point(141, 294);
+            this.productDescriptionTextBox.Location = new System.Drawing.Point(141, 244);
             this.productDescriptionTextBox.Name = "productDescriptionTextBox";
             this.productDescriptionTextBox.Size = new System.Drawing.Size(604, 20);
             this.productDescriptionTextBox.TabIndex = 8;
@@ -381,7 +381,7 @@
             // productInstructionTextBox
             // 
             this.productInstructionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductInstruction", true));
-            this.productInstructionTextBox.Location = new System.Drawing.Point(141, 320);
+            this.productInstructionTextBox.Location = new System.Drawing.Point(141, 270);
             this.productInstructionTextBox.Name = "productInstructionTextBox";
             this.productInstructionTextBox.Size = new System.Drawing.Size(604, 20);
             this.productInstructionTextBox.TabIndex = 9;
@@ -389,9 +389,9 @@
             // productLotNoTextBox
             // 
             this.productLotNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductLotNo", true));
-            this.productLotNoTextBox.Location = new System.Drawing.Point(141, 268);
+            this.productLotNoTextBox.Location = new System.Drawing.Point(418, 218);
             this.productLotNoTextBox.Name = "productLotNoTextBox";
-            this.productLotNoTextBox.Size = new System.Drawing.Size(474, 20);
+            this.productLotNoTextBox.Size = new System.Drawing.Size(197, 20);
             this.productLotNoTextBox.TabIndex = 7;
             // 
             // productNameTextBox
@@ -424,7 +424,7 @@
             this.unitIdComboBox.DataSource = this.unitBindingSource;
             this.unitIdComboBox.DisplayMember = "UnitName";
             this.unitIdComboBox.FormattingEnabled = true;
-            this.unitIdComboBox.Location = new System.Drawing.Point(141, 215);
+            this.unitIdComboBox.Location = new System.Drawing.Point(418, 191);
             this.unitIdComboBox.Name = "unitIdComboBox";
             this.unitIdComboBox.Size = new System.Drawing.Size(197, 21);
             this.unitIdComboBox.TabIndex = 5;
@@ -440,7 +440,7 @@
             this.drugTypeIdComboBox.DataSource = this.drugTypeBindingSource;
             this.drugTypeIdComboBox.DisplayMember = "DrugTypeName";
             this.drugTypeIdComboBox.FormattingEnabled = true;
-            this.drugTypeIdComboBox.Location = new System.Drawing.Point(141, 241);
+            this.drugTypeIdComboBox.Location = new System.Drawing.Point(141, 216);
             this.drugTypeIdComboBox.Name = "drugTypeIdComboBox";
             this.drugTypeIdComboBox.Size = new System.Drawing.Size(197, 21);
             this.drugTypeIdComboBox.TabIndex = 6;
@@ -471,7 +471,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(765, 398);
+            this.ClientSize = new System.Drawing.Size(765, 349);
             this.Controls.Add(supplierIdLabel);
             this.Controls.Add(this.supplierIdComboBox);
             this.Controls.Add(drugTypeIdLabel);
