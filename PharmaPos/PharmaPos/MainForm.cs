@@ -14,6 +14,7 @@ namespace PharmaPos
     public partial class MainForm : Form
     {
         private PreferencesForm _preferencesForm;
+        private SupplierListForm _supplierListForm;
         public MainForm()
         {
             InitializeComponent();
@@ -28,6 +29,16 @@ namespace PharmaPos
                 MinimizeBox = false
             };
             _preferencesForm.ShowDialog();
+        }
+
+        private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _supplierListForm = new SupplierListForm
+            {
+                WindowState = FormWindowState.Maximized,
+                MdiParent = this
+            };
+            _supplierListForm.Show();
         }
     }
 }

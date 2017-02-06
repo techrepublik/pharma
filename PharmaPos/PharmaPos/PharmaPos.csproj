@@ -222,6 +222,7 @@
     <None Include="Properties\DataSources\PharmaPos.data.Category.datasource" />
     <None Include="Properties\DataSources\PharmaPos.data.DrugType.datasource" />
     <None Include="Properties\DataSources\PharmaPos.data.Packing.datasource" />
+    <None Include="Properties\DataSources\PharmaPos.data.Supplier.datasource" />
     <None Include="Properties\DataSources\PharmaPos.data.Unit.datasource" />
     <None Include="Properties\DataSources\PharmaPos.data.VoidReason.datasource" />
     <None Include="Properties\Settings.settings">

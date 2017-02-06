@@ -38,7 +38,7 @@ namespace PharmaPos.data
         public virtual DrugType DrugType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductQuantity> ProductQuantities { get; set; }
-        public virtual Supplier Supplier { get; set; }
         public virtual Unit Unit { get; set; }
+        public virtual Supplier Supplier { get; set; }
     }
 }

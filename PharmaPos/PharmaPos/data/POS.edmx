@@ -110,7 +110,7 @@
           <Key>
             <PropertyRef Name="SupplierId" />
           </Key>
-          <Property Name="SupplierId" Type="int" Nullable="false" />
+          <Property Name="SupplierId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SupplierCode" Type="varchar" MaxLength="50" />
           <Property Name="SupplierName" Type="varchar(max)" />
           <Property Name="SupplierContact" Type="varchar" MaxLength="50" />
@@ -450,18 +450,6 @@
           <Property Name="OrderId" Type="Int32" />
           <NavigationProperty Name="Order" Relationship="pharmaModel.FK_Receipts_Orders" FromRole="Receipt" ToRole="Order" />
         </EntityType>
-        <EntityType Name="Supplier">
-          <Key>
-            <PropertyRef Name="SupplierId" />
-          </Key>
-          <Property Name="SupplierId" Type="Int32" Nullable="false" />
-          <Property Name="SupplierCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="SupplierContact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SupplierAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="SupplierIsActive" Type="Boolean" />
-          <NavigationProperty Name="Products" Relationship="pharmaModel.FK_Products_Suppliers" FromRole="Supplier" ToRole="Product" />
-        </EntityType>
         <EntityType Name="Unit">
           <Key>
             <PropertyRef Name="UnitId" />
@@ -489,7 +477,6 @@
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
           <EntitySet Name="Receipts" EntityType="Self.Receipt" />
-          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
           <EntitySet Name="Units" EntityType="Self.Unit" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="DrugTypes" EntityType="pharmaModel.DrugType" />
@@ -533,10 +520,6 @@
             <End Role="Product" EntitySet="Products" />
             <End Role="ProductQuantity" EntitySet="ProductQuantities" />
           </AssociationSet>
-          <AssociationSet Name="FK_Products_Suppliers" Association="pharmaModel.FK_Products_Suppliers">
-            <End Role="Supplier" EntitySet="Suppliers" />
-            <End Role="Product" EntitySet="Products" />
-          </AssociationSet>
           <AssociationSet Name="FK_Products_Units" Association="pharmaModel.FK_Products_Units">
             <End Role="Unit" EntitySet="Units" />
             <End Role="Product" EntitySet="Products" />
@@ -550,6 +533,11 @@
           <AssociationSet Name="FK_Voids_VoidReasons" Association="pharmaModel.FK_Voids_VoidReasons">
             <End Role="VoidReason" EntitySet="VoidReasons" />
             <End Role="Void" EntitySet="Voids" />
+          </AssociationSet>
+          <EntitySet Name="Suppliers" EntityType="pharmaModel.Supplier" />
+          <AssociationSet Name="FK_Products_Suppliers" Association="pharmaModel.FK_Products_Suppliers">
+            <End Role="Supplier" EntitySet="Suppliers" />
+            <End Role="Product" EntitySet="Products" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="DrugType">
@@ -623,8 +611,8 @@
           <NavigationProperty Name="Category" Relationship="pharmaModel.FK_Products_Categories" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="DrugType" Relationship="pharmaModel.FK_Products_DrugTypes" FromRole="Product" ToRole="DrugType" />
           <NavigationProperty Name="ProductQuantities" Relationship="pharmaModel.FK_ProductQuantities_Products" FromRole="Product" ToRole="ProductQuantity" />
-          <NavigationProperty Name="Supplier" Relationship="pharmaModel.FK_Products_Suppliers" FromRole="Product" ToRole="Supplier" />
           <NavigationProperty Name="Unit" Relationship="pharmaModel.FK_Products_Units" FromRole="Product" ToRole="Unit" />
+          <NavigationProperty Name="Supplier" Relationship="pharmaModel.FK_Products_Suppliers" FromRole="Product" ToRole="Supplier" />
         </EntityType>
         <Association Name="FK_Products_Categories">
           <End Type="pharmaModel.Category" Role="Category" Multiplicity="0..1">
@@ -746,20 +734,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Products_Suppliers">
-          <End Type="pharmaModel.Supplier" Role="Supplier" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="pharmaModel.Product" Role="Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Supplier">
-              <PropertyRef Name="SupplierId" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="SupplierId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Products_Units">
           <End Type="pharmaModel.Unit" Role="Unit" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -823,6 +797,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierContact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SupplierIsActive" Type="Boolean" />
+          <NavigationProperty Name="Products" Relationship="pharmaModel.FK_Products_Suppliers" FromRole="Supplier" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_Products_Suppliers">
+          <End Type="pharmaModel.Supplier" Role="Supplier" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="pharmaModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Supplier">
+              <PropertyRef Name="SupplierId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SupplierId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -871,18 +871,6 @@
                 <ScalarProperty Name="ReceiptAmount" ColumnName="ReceiptAmount" />
                 <ScalarProperty Name="ReceiptIsActive" ColumnName="ReceiptIsActive" />
                 <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Suppliers">
-            <EntityTypeMapping TypeName="pharmaModel.Supplier">
-              <MappingFragment StoreEntitySet="Suppliers">
-                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
-                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
-                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-                <ScalarProperty Name="SupplierContact" ColumnName="SupplierContact" />
-                <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
-                <ScalarProperty Name="SupplierIsActive" ColumnName="SupplierIsActive" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -992,6 +980,18 @@
                 <ScalarProperty Name="VoidTime" ColumnName="VoidTime" />
                 <ScalarProperty Name="VoidDate" ColumnName="VoidDate" />
                 <ScalarProperty Name="VoidId" ColumnName="VoidId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="pharmaModel.Supplier">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="SupplierIsActive" ColumnName="SupplierIsActive" />
+                <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
+                <ScalarProperty Name="SupplierContact" ColumnName="SupplierContact" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

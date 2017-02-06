@@ -46,18 +46,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Suppliers">
-      <EntityTypeMapping TypeName="pharmaModel.Supplier">
-        <MappingFragment StoreEntitySet="Suppliers">
-          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
-          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
-          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
-          <ScalarProperty Name="SupplierContact" ColumnName="SupplierContact" />
-          <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
-          <ScalarProperty Name="SupplierIsActive" ColumnName="SupplierIsActive" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Units">
       <EntityTypeMapping TypeName="pharmaModel.Unit">
         <MappingFragment StoreEntitySet="Units">
@@ -164,6 +152,18 @@
           <ScalarProperty Name="VoidTime" ColumnName="VoidTime" />
           <ScalarProperty Name="VoidDate" ColumnName="VoidDate" />
           <ScalarProperty Name="VoidId" ColumnName="VoidId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="pharmaModel.Supplier">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="SupplierIsActive" ColumnName="SupplierIsActive" />
+          <ScalarProperty Name="SupplierAddress" ColumnName="SupplierAddress" />
+          <ScalarProperty Name="SupplierContact" ColumnName="SupplierContact" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+          <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -9,7 +9,6 @@
         <EntityTypeShape EntityType="pharmaModel.Customer" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="pharmaModel.OrderDetail" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="pharmaModel.Receipt" Width="1.5" PointX="7.5" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="pharmaModel.Supplier" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="pharmaModel.Unit" Width="1.5" PointX="0.75" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="pharmaModel.User" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="pharmaModel.DrugType" Width="1.5" PointX="0.75" PointY="15" />
@@ -26,12 +25,13 @@
         <AssociationConnector Association="pharmaModel.FK_Receipts_Orders" />
         <AssociationConnector Association="pharmaModel.FK_ProductQuantities_Packings" />
         <AssociationConnector Association="pharmaModel.FK_ProductQuantities_Products" />
-        <AssociationConnector Association="pharmaModel.FK_Products_Suppliers" />
         <AssociationConnector Association="pharmaModel.FK_Products_Units" />
         <EntityTypeShape EntityType="pharmaModel.VoidReason" Width="1.5" PointX="7.5" PointY="12" />
         <EntityTypeShape EntityType="pharmaModel.Void" Width="1.5" PointX="9.75" PointY="1.375" />
         <AssociationConnector Association="pharmaModel.FK_Voids_OrderDetails" />
         <AssociationConnector Association="pharmaModel.FK_Voids_VoidReasons" />
+        <EntityTypeShape EntityType="pharmaModel.Supplier" Width="1.5" PointX="0.75" PointY="11.5" />
+        <AssociationConnector Association="pharmaModel.FK_Products_Suppliers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
