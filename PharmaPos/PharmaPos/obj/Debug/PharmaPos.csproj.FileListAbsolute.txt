@@ -18,3 +18,4 @@ C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.fo
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.ProductQntyUpdateForm.resources
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.SupplierListForm.resources
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.SupplierUpdateForm.resources
+C:\Users\josh\Documents\GitHub\pharma\PharmaPos\PharmaPos\obj\Debug\PharmaPos.forms.ProductUpdateForm.resources

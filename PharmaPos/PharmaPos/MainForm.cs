@@ -15,6 +15,7 @@ namespace PharmaPos
     {
         private PreferencesForm _preferencesForm;
         private SupplierListForm _supplierListForm;
+        private ProductListForm _productListForm;
         public MainForm()
         {
             InitializeComponent();
@@ -39,6 +40,16 @@ namespace PharmaPos
                 MdiParent = this
             };
             _supplierListForm.Show();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            _productListForm = new ProductListForm
+            {
+                WindowState = FormWindowState.Maximized,
+                MdiParent = this
+            };
+            _productListForm.Show();
         }
     }
 }
