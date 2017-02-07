@@ -343,6 +343,7 @@
             // 
             // productCodeTextBox
             // 
+            this.productCodeTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.productCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductCode", true));
             this.productCodeTextBox.Location = new System.Drawing.Point(141, 88);
             this.productCodeTextBox.Name = "productCodeTextBox";
@@ -359,6 +360,7 @@
             // 
             // productGenericNameTextBox
             // 
+            this.productGenericNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.productGenericNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductGenericName", true));
             this.productGenericNameTextBox.Location = new System.Drawing.Point(141, 139);
             this.productGenericNameTextBox.Name = "productGenericNameTextBox";
@@ -383,6 +385,7 @@
             // 
             // productNameTextBox
             // 
+            this.productNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.productNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductName", true));
             this.productNameTextBox.Location = new System.Drawing.Point(141, 114);
             this.productNameTextBox.Name = "productNameTextBox";

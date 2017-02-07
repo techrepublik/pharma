@@ -140,9 +140,7 @@ namespace PharmaPos.forms
             Cursor.Current = Cursors.WaitCursor;
             productBindingSource.DataSource = _listProducts.FindAll(f => f.ProductName.ToUpper().Contains(strSearch) ||
                                                                          f.ProductGenericName.ToUpper().Contains(strSearch) ||
-                                                                         f.ProductCode == strSearch ||
-                                                                         f.ProductDescription.ToUpper().Contains(strSearch) ||
-                                                                         f.ProductInstruction.ToUpper().Contains(strSearch));
+                                                                         f.ProductCode == strSearch);
             Cursor.Current = Cursors.Default;
         }
     }

@@ -40,9 +40,9 @@
             System.Windows.Forms.Label productQuantityQntyLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label packingIdLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductQntyUpdateForm));
             System.Windows.Forms.Label unitIdLabel;
             System.Windows.Forms.Label productQuantityVolumeLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductQntyUpdateForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.productQuantityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productQuantityBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -191,6 +191,24 @@
             packingIdLabel.Size = new System.Drawing.Size(49, 13);
             packingIdLabel.TabIndex = 27;
             packingIdLabel.Text = "Packing:";
+            // 
+            // unitIdLabel
+            // 
+            unitIdLabel.AutoSize = true;
+            unitIdLabel.Location = new System.Drawing.Point(349, 173);
+            unitIdLabel.Name = "unitIdLabel";
+            unitIdLabel.Size = new System.Drawing.Size(29, 13);
+            unitIdLabel.TabIndex = 27;
+            unitIdLabel.Text = "Unit:";
+            // 
+            // productQuantityVolumeLabel
+            // 
+            productQuantityVolumeLabel.AutoSize = true;
+            productQuantityVolumeLabel.Location = new System.Drawing.Point(19, 172);
+            productQuantityVolumeLabel.Name = "productQuantityVolumeLabel";
+            productQuantityVolumeLabel.Size = new System.Drawing.Size(45, 13);
+            productQuantityVolumeLabel.TabIndex = 28;
+            productQuantityVolumeLabel.Text = "Volume:";
             // 
             // panel1
             // 
@@ -437,18 +455,8 @@
             // 
             this.packingBindingSource.DataSource = typeof(PharmaPos.data.Packing);
             // 
-            // unitIdLabel
-            // 
-            unitIdLabel.AutoSize = true;
-            unitIdLabel.Location = new System.Drawing.Point(349, 173);
-            unitIdLabel.Name = "unitIdLabel";
-            unitIdLabel.Size = new System.Drawing.Size(29, 13);
-            unitIdLabel.TabIndex = 27;
-            unitIdLabel.Text = "Unit:";
-            // 
             // unitIdComboBox
             // 
-            this.unitIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productQuantityBindingSource, "UnitId", true));
             this.unitIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productQuantityBindingSource, "UnitId", true));
             this.unitIdComboBox.DataSource = this.unitBindingSource;
             this.unitIdComboBox.DisplayMember = "UnitName";
@@ -462,15 +470,6 @@
             // unitBindingSource
             // 
             this.unitBindingSource.DataSource = typeof(PharmaPos.data.Unit);
-            // 
-            // productQuantityVolumeLabel
-            // 
-            productQuantityVolumeLabel.AutoSize = true;
-            productQuantityVolumeLabel.Location = new System.Drawing.Point(19, 172);
-            productQuantityVolumeLabel.Name = "productQuantityVolumeLabel";
-            productQuantityVolumeLabel.Size = new System.Drawing.Size(45, 13);
-            productQuantityVolumeLabel.TabIndex = 28;
-            productQuantityVolumeLabel.Text = "Volume:";
             // 
             // productQuantityVolumeTextBox
             // 
