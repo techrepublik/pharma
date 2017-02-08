@@ -46,26 +46,58 @@ namespace PharmaPos.forms
 
         private void productBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if (productBindingSource == null) return;
-            Validate();
-            productBindingSource.EndEdit();
-            var iResult = ProductManager.Save((Product)productBindingSource.Current);
-            if (iResult > 0)
+            if (CheckTextBoxes())
             {
-                MessageBox.Show(@"Record was successfully saved.", @"Save", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                productCodeTextBox.Focus();
+                if (productBindingSource == null) return;
+                Validate();
+                productBindingSource.EndEdit();
+                var iResult = ProductManager.Save((Product) productBindingSource.Current);
+                if (iResult > 0)
+                {
+                    MessageBox.Show(@"Record was successfully saved.", @"Save", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    productCodeTextBox.Focus();
+                }
+                else
+                {
+                    MessageBox.Show(@"Error occurred in saving.", @"Save", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show(@"Error occurred in saving.", @"Save", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show(@"Please check Product Code, Name and Generic boxes should not be empty.", @"Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private bool CheckTextBoxes()
+        {
+            var bText1 = false;
+            var bText2 = false;
+            var bText3 = false;
+            if (productCodeTextBox.Text.Length > 0)
+            {
+                productCodeTextBox.Focus();
+                bText1 = true;
+            }
+            if (productNameTextBox.Text.Length > 0)
+            {
+                productNameTextBox.Focus();
+                bText2 = true;
+            }
+            if (productGenericNameTextBox.Text.Length > 0)
+            {
+                productGenericNameTextBox.Focus();
+                bText3 = true;
+            }
+
+            return bText1 && bText2 && bText3;
         }
     }
 }

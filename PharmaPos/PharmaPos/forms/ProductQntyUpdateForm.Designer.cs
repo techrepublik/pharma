@@ -365,6 +365,7 @@
             this.productQuanitityCostTextBox.Size = new System.Drawing.Size(138, 20);
             this.productQuanitityCostTextBox.TabIndex = 5;
             this.productQuanitityCostTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.productQuanitityCostTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productQuanitityCostTextBox_KeyPress);
             // 
             // productQuantityDateDateTimePicker
             // 
@@ -419,6 +420,7 @@
             this.productQuantityPriceTextBox.Size = new System.Drawing.Size(169, 20);
             this.productQuantityPriceTextBox.TabIndex = 6;
             this.productQuantityPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.productQuantityPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productQuantityPriceTextBox_KeyPress);
             // 
             // productQuantityQntyTextBox
             // 
@@ -428,6 +430,7 @@
             this.productQuantityQntyTextBox.Size = new System.Drawing.Size(138, 20);
             this.productQuantityQntyTextBox.TabIndex = 7;
             this.productQuantityQntyTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.productQuantityQntyTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productQuantityQntyTextBox_KeyPress);
             // 
             // labelProductName
             // 
@@ -479,6 +482,7 @@
             this.productQuantityVolumeTextBox.Size = new System.Drawing.Size(138, 20);
             this.productQuantityVolumeTextBox.TabIndex = 3;
             this.productQuantityVolumeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.productQuantityVolumeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productQuantityVolumeTextBox_KeyPress);
             // 
             // ProductQntyUpdateForm
             // 

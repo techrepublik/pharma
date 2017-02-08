@@ -102,5 +102,39 @@ namespace PharmaPos.forms
                 }
             }
         }
+
+        private void productQuantityVolumeTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NumbersOnly(sender, e);
+        }
+
+        private static void NumbersOnly(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && (((TextBox) sender).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void productQuanitityCostTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NumbersOnly(sender, e);
+        }
+
+        private void productQuantityPriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NumbersOnly(sender, e);
+        }
+
+        private void productQuantityQntyTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            NumbersOnly(sender, e);
+        }
     }
 }

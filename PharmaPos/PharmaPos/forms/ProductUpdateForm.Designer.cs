@@ -394,6 +394,8 @@
             // 
             // categoryIdComboBox
             // 
+            this.categoryIdComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.categoryIdComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.categoryIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "CategoryId", true));
             this.categoryIdComboBox.DataSource = this.categoryBindingSource;
             this.categoryIdComboBox.DisplayMember = "CategoryName";
@@ -410,6 +412,8 @@
             // 
             // drugTypeIdComboBox
             // 
+            this.drugTypeIdComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.drugTypeIdComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.drugTypeIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "DrugTypeId", true));
             this.drugTypeIdComboBox.DataSource = this.drugTypeBindingSource;
             this.drugTypeIdComboBox.DisplayMember = "DrugTypeName";
@@ -426,6 +430,8 @@
             // 
             // supplierIdComboBox
             // 
+            this.supplierIdComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.supplierIdComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.supplierIdComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "SupplierId", true));
             this.supplierIdComboBox.DataSource = this.supplierBindingSource;
             this.supplierIdComboBox.DisplayMember = "SupplierName";
