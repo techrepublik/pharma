@@ -14,6 +14,19 @@ namespace PharmaPos.forms
             InitializeComponent();
         }
 
+        private void InitControls()
+        {
+            productQuantityDateDateTimePicker.Format = DateTimePickerFormat.Custom;
+            productQuantityDateDateTimePicker.CustomFormat = @" ";
+
+            productManufactureDateDateTimePicker.Format = DateTimePickerFormat.Custom;
+            productManufactureDateDateTimePicker.CustomFormat = @" ";
+
+            productQuantityExpiryDateDateTimePicker.Format = DateTimePickerFormat.Custom;
+            productQuantityExpiryDateDateTimePicker.CustomFormat = @" ";
+
+        }
+
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             productQuantityDateDateTimePicker.Value = DateTime.Now;
@@ -34,11 +47,11 @@ namespace PharmaPos.forms
 
         private void ProductQntyUpdateForm_Load(object sender, EventArgs e)
         {
+            //InitControls();
             InitProduct();
             InitRecord();
             if (ProductQuantity != null)
                 productQuantityBindingSource.DataSource = ProductQuantity;
-
         }
 
         private void InitProduct()

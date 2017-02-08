@@ -141,6 +141,12 @@
     <Compile Include="forms\CustomerUpdateForm.Designer.cs">
       <DependentUpon>CustomerUpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\POSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\POSForm.Designer.cs">
+      <DependentUpon>POSForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\PreferencesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\CustomerUpdateForm.resx">
       <DependentUpon>CustomerUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\POSForm.resx">
+      <DependentUpon>POSForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\PreferencesForm.resx">
       <DependentUpon>PreferencesForm.cs</DependentUpon>
