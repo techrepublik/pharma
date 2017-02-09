@@ -70,9 +70,6 @@
             this.drugTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.supplierIdComboBox = new System.Windows.Forms.ComboBox();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             categoryIdLabel = new System.Windows.Forms.Label();
             productAlertCountLabel = new System.Windows.Forms.Label();
             productCodeLabel = new System.Windows.Forms.Label();
@@ -83,14 +80,12 @@
             productNameLabel = new System.Windows.Forms.Label();
             drugTypeIdLabel = new System.Windows.Forms.Label();
             supplierIdLabel = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
             this.productBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // categoryIdLabel
@@ -185,10 +180,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -454,34 +446,6 @@
             // 
             this.supplierBindingSource.DataSource = typeof(PharmaPos.data.Supplier);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PharmaPos.Properties.Resources.thFTZEPTJU;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 29);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(65, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(356, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Provide needed information for Products (Add New and Update Products).";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(244, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Product Update form for the BOTIKA NG BAYAN. ";
-            // 
             // ProductUpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,8 +477,6 @@
             this.Name = "ProductUpdateForm";
             this.Text = "Product Update Form";
             this.Load += new System.EventHandler(this.ProductUpdateForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).EndInit();
             this.productBindingNavigator.ResumeLayout(false);
             this.productBindingNavigator.PerformLayout();
@@ -522,7 +484,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,8 +521,5 @@
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
     }
 }
