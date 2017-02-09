@@ -40,7 +40,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.userBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -53,8 +52,6 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.userBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.userDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNoTextBox = new System.Windows.Forms.TextBox();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.userPasswordTextBox = new System.Windows.Forms.TextBox();
@@ -63,6 +60,9 @@
             this.userDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.userIsActiveCheckBox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             userNoLabel = new System.Windows.Forms.Label();
             userNameLabel = new System.Windows.Forms.Label();
             userPasswordLabel = new System.Windows.Forms.Label();
@@ -72,8 +72,8 @@
             userIsActiveLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).BeginInit();
             this.userBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // userNoLabel
@@ -187,11 +187,6 @@
             this.bindingNavigatorAddNewItem.Text = "Add new";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(PharmaPos.data.User);
-            this.userBindingSource.CurrentChanged += new System.EventHandler(this.userBindingSource_CurrentChanged);
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -294,22 +289,6 @@
             this.userDataGridView.Size = new System.Drawing.Size(264, 315);
             this.userDataGridView.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "UserName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "User Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "UserIsActive";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Active";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 50;
-            // 
             // userNoTextBox
             // 
             this.userNoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "UserNo", true));
@@ -384,6 +363,29 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "1 - Cashier, 2 - Encoder, 3 - Admin";
             // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(PharmaPos.data.User);
+            this.userBindingSource.CurrentChanged += new System.EventHandler(this.userBindingSource_CurrentChanged);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "UserName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "User Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "UserIsActive";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Active";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn8.Width = 50;
+            // 
             // UserManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,8 +415,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).EndInit();
             this.userBindingNavigator.ResumeLayout(false);
             this.userBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -438,8 +440,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton userBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView userDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.TextBox userNoTextBox;
         private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.TextBox userPasswordTextBox;
@@ -448,5 +448,7 @@
         private System.Windows.Forms.DateTimePicker userDateDateTimePicker;
         private System.Windows.Forms.CheckBox userIsActiveCheckBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn8;
     }
 }

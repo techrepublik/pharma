@@ -47,5 +47,10 @@ namespace PharmaPos
             }
             return user;
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

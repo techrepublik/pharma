@@ -66,10 +66,27 @@ namespace PharmaPos
 
         private void InitStatusBar()
         {
-            if (User != null)
+            if (User == null) return;
+            toolStripStatusLabelUser.Text = String.Format("{0}", User.UserFullName.ToUpper());
+            switch (User.UserLevel)
             {
-                toolStripStatusLabelUser.Text = String.Format("{0}", User.UserFullName.ToUpper());
+                case 1:
+                    maintenanceToolStripMenuItem.Enabled = false;
+                    break;
+                case 2:
+                    userToolStripMenuItem.Enabled = false;
+                    transactionToolStripMenuItem.Enabled = false;
+                    break;
+                case 3:
+                    maintenanceToolStripMenuItem.Enabled = true;
+                    userToolStripMenuItem.Enabled = true;
+                    transactionToolStripMenuItem.Enabled = true;
+                    break;
+                default:
+                    break;
             }
+
+            toolStripStatusLabelDateTime.Text = DateTime.Now.ToLongDateString();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -82,6 +99,31 @@ namespace PharmaPos
                 Environment.Exit(1);
             else
                 e.Cancel = true; // to don't close form is user change his mind
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabelTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void toolStripButtonProduct_Click(object sender, EventArgs e)
+        {
+            toolStripMenuItem3_Click(sender, e);
+        }
+
+        private void toolStripButtonSupplier_Click(object sender, EventArgs e)
+        {
+            supplierToolStripMenuItem_Click(sender, e);
+        }
+
+        private void toolStripButtonPreferences_Click(object sender, EventArgs e)
+        {
+            preferencesToolStripMenuItem_Click(sender, e);
         }
     }
 }
