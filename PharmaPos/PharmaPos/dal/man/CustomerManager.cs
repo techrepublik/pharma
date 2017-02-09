@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using PharmaPos.data;
 
@@ -60,6 +61,15 @@ namespace PharmaPos.dal.man
             {
                 _d.LazyLoadingEnabled = false;
                 return _d.GetAll().ToList();
+            }
+        }
+
+        public static List<Customer> GetAll(string search)
+        {
+            using (_d = new DataRepository<Customer>())
+            {
+                _d.LazyLoadingEnabled = false;
+                return _d.Find(f => f.CustomerCode.Contains(search) || f.CustomerName.Contains(search)).ToList();
             }
         }
     }

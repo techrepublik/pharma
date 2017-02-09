@@ -12,6 +12,7 @@ namespace PharmaPos
         private PreferencesForm _preferencesForm;
         private SupplierListForm _supplierListForm;
         private ProductListForm _productListForm;
+        private CustomerListForm _customerListForm;
         public MainForm()
         {
             InitializeComponent();
@@ -82,8 +83,6 @@ namespace PharmaPos
                     userToolStripMenuItem.Enabled = true;
                     transactionToolStripMenuItem.Enabled = true;
                     break;
-                default:
-                    break;
             }
 
             toolStripStatusLabelDateTime.Text = DateTime.Now.ToLongDateString();
@@ -124,6 +123,21 @@ namespace PharmaPos
         private void toolStripButtonPreferences_Click(object sender, EventArgs e)
         {
             preferencesToolStripMenuItem_Click(sender, e);
+        }
+
+        private void customerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _customerListForm = new CustomerListForm
+            {
+                WindowState = FormWindowState.Maximized,
+                MdiParent = this
+            };
+            _customerListForm.Show();
+        }
+
+        private void toolStripButtonCustomer_Click(object sender, EventArgs e)
+        {
+            customerToolStripMenuItem_Click(sender, e);
         }
     }
 }

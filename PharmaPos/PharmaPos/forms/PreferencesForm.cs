@@ -265,8 +265,6 @@ namespace PharmaPos.forms
                     toolStripStatusLabel1.Text = @"Void Reason Tab";
                     DeleteVoidReason();
                     break;
-                default:
-                    break;
             }
         }
     }

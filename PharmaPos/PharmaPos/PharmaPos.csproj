@@ -261,6 +261,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PharmaPos.data.Category.datasource" />
+    <None Include="Properties\DataSources\PharmaPos.data.Customer.datasource" />
     <None Include="Properties\DataSources\PharmaPos.data.DrugType.datasource" />
     <None Include="Properties\DataSources\PharmaPos.data.Packing.datasource" />
     <None Include="Properties\DataSources\PharmaPos.data.Product.datasource" />
