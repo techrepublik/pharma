@@ -73,6 +73,9 @@
             this.unitIdComboBox = new System.Windows.Forms.ComboBox();
             this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productQuantityVolumeTextBox = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             productManufactureDateLabel = new System.Windows.Forms.Label();
             productQuanitityCostLabel = new System.Windows.Forms.Label();
             productQuantityDateLabel = new System.Windows.Forms.Label();
@@ -86,11 +89,13 @@
             packingIdLabel = new System.Windows.Forms.Label();
             unitIdLabel = new System.Windows.Forms.Label();
             productQuantityVolumeLabel = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingNavigator)).BeginInit();
             this.productQuantityBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // productManufactureDateLabel
@@ -212,7 +217,10 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -484,6 +492,35 @@
             this.productQuantityVolumeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.productQuantityVolumeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productQuantityVolumeTextBox_KeyPress);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PharmaPos.Properties.Resources.thFTZEPTJU;
+            this.pictureBox2.Location = new System.Drawing.Point(7, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(51, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(67, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(430, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Provide needed information for Product Quantity (Add New and Update Product Quant" +
+    "ity).";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(67, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(289, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Product Quantity Update Form for the BOTIKA NG BAYAN. ";
+            // 
             // ProductQntyUpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -521,12 +558,15 @@
             this.Name = "ProductQntyUpdateForm";
             this.Text = "Product Qnty Update Form";
             this.Load += new System.EventHandler(this.ProductQntyUpdateForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingNavigator)).EndInit();
             this.productQuantityBindingNavigator.ResumeLayout(false);
             this.productQuantityBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,5 +604,8 @@
         private System.Windows.Forms.ComboBox unitIdComboBox;
         private System.Windows.Forms.BindingSource unitBindingSource;
         private System.Windows.Forms.TextBox productQuantityVolumeTextBox;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

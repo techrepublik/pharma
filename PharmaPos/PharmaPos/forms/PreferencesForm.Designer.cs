@@ -41,24 +41,14 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.categoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.unitDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.drugTypeDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drugTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.packingDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.packingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.voidReasonDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.voidReasonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -72,30 +62,48 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.categoryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drugTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.packingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.voidReasonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unitDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.packingDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.voidReasonDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voidReasonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingNavigator)).BeginInit();
             this.categoryBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voidReasonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -162,17 +170,6 @@
             this.categoryDataGridView.TabIndex = 0;
             this.categoryDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoryDataGridView_RowLeave);
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CategoryName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Category Name";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 500;
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataSource = typeof(PharmaPos.data.Category);
-            // 
             // tabPage2
             // 
             this.tabPage2.AutoScroll = true;
@@ -202,17 +199,6 @@
             this.unitDataGridView.TabIndex = 0;
             this.unitDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.unitDataGridView_RowLeave);
             // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "UnitName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Unit Name";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 500;
-            // 
-            // unitBindingSource
-            // 
-            this.unitBindingSource.DataSource = typeof(PharmaPos.data.Unit);
-            // 
             // tabPage3
             // 
             this.tabPage3.AutoScroll = true;
@@ -240,17 +226,6 @@
             this.drugTypeDataGridView.Size = new System.Drawing.Size(566, 263);
             this.drugTypeDataGridView.TabIndex = 0;
             this.drugTypeDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.drugTypeDataGridView_RowLeave);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DrugTypeName";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Drug Type";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 500;
-            // 
-            // drugTypeBindingSource
-            // 
-            this.drugTypeBindingSource.DataSource = typeof(PharmaPos.data.DrugType);
             // 
             // tabPage4
             // 
@@ -280,17 +255,6 @@
             this.packingDataGridView.TabIndex = 0;
             this.packingDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.packingDataGridView_RowLeave);
             // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "PackingName";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Packing Name";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 500;
-            // 
-            // packingBindingSource
-            // 
-            this.packingBindingSource.DataSource = typeof(PharmaPos.data.Packing);
-            // 
             // tabPage5
             // 
             this.tabPage5.AutoScroll = true;
@@ -318,17 +282,6 @@
             this.voidReasonDataGridView.Size = new System.Drawing.Size(566, 263);
             this.voidReasonDataGridView.TabIndex = 0;
             this.voidReasonDataGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.voidReasonDataGridView_RowLeave);
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "VoidReasonReason";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Void Reason";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 500;
-            // 
-            // voidReasonBindingSource
-            // 
-            this.voidReasonBindingSource.DataSource = typeof(PharmaPos.data.VoidReason);
             // 
             // categoryBindingNavigator
             // 
@@ -453,6 +406,89 @@
             this.categoryBindingNavigatorSaveItem.Text = "Save Data";
             this.categoryBindingNavigatorSaveItem.Visible = false;
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CategoryName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Category Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 500;
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(PharmaPos.data.Category);
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "UnitName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Unit Name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 500;
+            // 
+            // unitBindingSource
+            // 
+            this.unitBindingSource.DataSource = typeof(PharmaPos.data.Unit);
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DrugTypeName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Drug Type";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 500;
+            // 
+            // drugTypeBindingSource
+            // 
+            this.drugTypeBindingSource.DataSource = typeof(PharmaPos.data.DrugType);
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "PackingName";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Packing Name";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 500;
+            // 
+            // packingBindingSource
+            // 
+            this.packingBindingSource.DataSource = typeof(PharmaPos.data.Packing);
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "VoidReasonReason";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Void Reason";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 500;
+            // 
+            // voidReasonBindingSource
+            // 
+            this.voidReasonBindingSource.DataSource = typeof(PharmaPos.data.VoidReason);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PharmaPos.Properties.Resources.thFTZEPTJU;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(51, 29);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(63, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(266, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Provide needed information for the system preferences.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(63, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(226, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Preferences form for the BOTIKA NG BAYAN. ";
+            // 
             // PreferencesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,27 +501,30 @@
             this.Name = "PreferencesForm";
             this.Text = "Preferences Form";
             this.Load += new System.EventHandler(this.PreferencesForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.unitDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.drugTypeDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.packingDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.voidReasonDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voidReasonBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingNavigator)).EndInit();
             this.categoryBindingNavigator.ResumeLayout(false);
             this.categoryBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voidReasonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,5 +569,8 @@
         private System.Windows.Forms.DataGridView voidReasonDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.BindingSource voidReasonBindingSource;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
