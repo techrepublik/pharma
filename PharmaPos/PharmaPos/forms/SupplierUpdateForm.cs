@@ -15,11 +15,12 @@ namespace PharmaPos.forms
 
         private void supplierBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if (supplierBindingSource != null)
+            if (CheckEmptyBoxes())
             {
+                if (supplierBindingSource == null) return;
                 Validate();
                 supplierBindingSource.EndEdit();
-                var iResult = SupplierManager.Save((Supplier)supplierBindingSource.Current);
+                var iResult = SupplierManager.Save((Supplier) supplierBindingSource.Current);
                 if (iResult > 0)
                 {
                     MessageBox.Show(@"Record was successfully saved.", @"Save", MessageBoxButtons.OK,
@@ -31,6 +32,11 @@ namespace PharmaPos.forms
                     MessageBox.Show(@"Error occurred in saving.", @"Save", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show(@"Don't leave the Supplier Code and Supplier Name empty.", @"Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -54,6 +60,11 @@ namespace PharmaPos.forms
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             supplierCodeTextBox.Focus();
+        }
+
+        private bool CheckEmptyBoxes()
+        {
+            return (supplierCodeTextBox.Text.Length > 0) && (supplierNameTextBox.Text.Length > 0);
         }
     }
 }

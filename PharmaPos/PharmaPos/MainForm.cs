@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using PharmaPos.data;
 using PharmaPos.forms;
 
 namespace PharmaPos
 {
     public partial class MainForm : Form
     {
+        public User User { get; set; }
+
         private PreferencesForm _preferencesForm;
         private SupplierListForm _supplierListForm;
         private ProductListForm _productListForm;
@@ -50,6 +46,42 @@ namespace PharmaPos
                 MdiParent = this
             };
             _productListForm.Show();
+        }
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new UserManagementForm
+            {
+                StartPosition = FormStartPosition.CenterScreen,
+                MaximizeBox = false,
+                MinimizeBox = false
+            };
+            f.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            InitStatusBar();
+        }
+
+        private void InitStatusBar()
+        {
+            if (User != null)
+            {
+                toolStripStatusLabelUser.Text = String.Format("{0}", User.UserFullName.ToUpper());
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason != CloseReason.UserClosing) return;
+            if (MessageBox.Show(@"Are you sure want close the application?",
+                @"PDS System",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Information) == DialogResult.OK)
+                Environment.Exit(1);
+            else
+                e.Cancel = true; // to don't close form is user change his mind
         }
     }
 }
