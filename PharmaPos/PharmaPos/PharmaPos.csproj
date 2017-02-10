@@ -297,6 +297,19 @@
       <DependentUpon>POS.edmx</DependentUpon>
       <LastGenOutput>POS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Medicalwp-Medical-Health-Sign-blue.ico" />
+    <None Include="Resources\Fasticon-Shop-Cart-Shop-cart1.ico" />
+    <None Include="Resources\Oxygen-Icons.org-Oxygen-Actions-resource-group.ico" />
+    <None Include="Resources\preferences_desktop_assistive_technology.ico" />
+    <None Include="Resources\Graphicloads-Medical-Health-Medicine-cart.ico" />
+    <None Include="Resources\notepad.png" />
+    <None Include="Resources\Jamespeng-Medical-Medical-stick.ico" />
+    <None Include="Resources\Aha-Soft-Standard-Portfolio-Inventory.ico" />
+    <None Include="Resources\Fasticon-Shop-Cart-Shop-cart.ico" />
+    <None Include="Resources\Aha-Soft-Software-User-group.ico" />
+    <None Include="Resources\cart.png" />
+    <None Include="Resources\checklist.png" />
+    <None Include="Resources\edit_group.ico" />
     <None Include="Resources\file_list.ico" />
     <None Include="Resources\next.ico" />
     <None Include="Resources\arrow_refresh.ico" />

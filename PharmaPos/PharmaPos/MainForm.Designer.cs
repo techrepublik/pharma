@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,13 +47,8 @@
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonProduct = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSupplier = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCustomer = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonPreferences = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonPOS = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelConnection = new System.Windows.Forms.ToolStripStatusLabel();
@@ -62,6 +56,11 @@
             this.toolStripStatusLabelDateTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripButtonProduct = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSupplier = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonCustomer = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonPreferences = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonPOS = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -176,7 +175,7 @@
             this.transactionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pointOfSalePOSToolStripMenuItem});
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
-            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.transactionToolStripMenuItem.Text = "&Transaction";
             // 
             // pointOfSalePOSToolStripMenuItem
@@ -213,64 +212,15 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButtonProduct
-            // 
-            this.toolStripButtonProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonProduct.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonProduct.Image")));
-            this.toolStripButtonProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonProduct.Name = "toolStripButtonProduct";
-            this.toolStripButtonProduct.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonProduct.Text = "&Product";
-            this.toolStripButtonProduct.Click += new System.EventHandler(this.toolStripButtonProduct_Click);
-            // 
-            // toolStripButtonSupplier
-            // 
-            this.toolStripButtonSupplier.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSupplier.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSupplier.Image")));
-            this.toolStripButtonSupplier.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSupplier.Name = "toolStripButtonSupplier";
-            this.toolStripButtonSupplier.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSupplier.Text = "&Supplier";
-            this.toolStripButtonSupplier.Click += new System.EventHandler(this.toolStripButtonSupplier_Click);
-            // 
-            // toolStripButtonCustomer
-            // 
-            this.toolStripButtonCustomer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCustomer.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCustomer.Image")));
-            this.toolStripButtonCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCustomer.Name = "toolStripButtonCustomer";
-            this.toolStripButtonCustomer.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonCustomer.Text = "&Customer";
-            this.toolStripButtonCustomer.Click += new System.EventHandler(this.toolStripButtonCustomer_Click);
-            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButtonPreferences
-            // 
-            this.toolStripButtonPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonPreferences.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPreferences.Image")));
-            this.toolStripButtonPreferences.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonPreferences.Name = "toolStripButtonPreferences";
-            this.toolStripButtonPreferences.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonPreferences.Text = "&Preferences";
-            this.toolStripButtonPreferences.Click += new System.EventHandler(this.toolStripButtonPreferences_Click);
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButtonPOS
-            // 
-            this.toolStripButtonPOS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonPOS.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPOS.Image")));
-            this.toolStripButtonPOS.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonPOS.Name = "toolStripButtonPOS";
-            this.toolStripButtonPOS.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonPOS.Text = "POS";
             // 
             // statusStrip1
             // 
@@ -326,6 +276,55 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // toolStripButtonProduct
+            // 
+            this.toolStripButtonProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonProduct.Image = global::PharmaPos.Properties.Resources.Fasticon_Shop_Cart_Shop_cart1;
+            this.toolStripButtonProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonProduct.Name = "toolStripButtonProduct";
+            this.toolStripButtonProduct.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonProduct.Text = "&Product";
+            this.toolStripButtonProduct.Click += new System.EventHandler(this.toolStripButtonProduct_Click);
+            // 
+            // toolStripButtonSupplier
+            // 
+            this.toolStripButtonSupplier.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSupplier.Image = global::PharmaPos.Properties.Resources.Oxygen_Icons_org_Oxygen_Actions_resource_group;
+            this.toolStripButtonSupplier.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSupplier.Name = "toolStripButtonSupplier";
+            this.toolStripButtonSupplier.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSupplier.Text = "&Supplier";
+            this.toolStripButtonSupplier.Click += new System.EventHandler(this.toolStripButtonSupplier_Click);
+            // 
+            // toolStripButtonCustomer
+            // 
+            this.toolStripButtonCustomer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonCustomer.Image = global::PharmaPos.Properties.Resources.Aha_Soft_Software_User_group;
+            this.toolStripButtonCustomer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCustomer.Name = "toolStripButtonCustomer";
+            this.toolStripButtonCustomer.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonCustomer.Text = "&Customer";
+            this.toolStripButtonCustomer.Click += new System.EventHandler(this.toolStripButtonCustomer_Click);
+            // 
+            // toolStripButtonPreferences
+            // 
+            this.toolStripButtonPreferences.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonPreferences.Image = global::PharmaPos.Properties.Resources.preferences_desktop_assistive_technology;
+            this.toolStripButtonPreferences.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonPreferences.Name = "toolStripButtonPreferences";
+            this.toolStripButtonPreferences.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonPreferences.Text = "&Preferences";
+            this.toolStripButtonPreferences.Click += new System.EventHandler(this.toolStripButtonPreferences_Click);
+            // 
+            // toolStripButtonPOS
+            // 
+            this.toolStripButtonPOS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonPOS.Image = global::PharmaPos.Properties.Resources.Jamespeng_Medical_Medical_stick;
+            this.toolStripButtonPOS.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonPOS.Name = "toolStripButtonPOS";
+            this.toolStripButtonPOS.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonPOS.Text = "POS";
             // 
             // MainForm
             // 
