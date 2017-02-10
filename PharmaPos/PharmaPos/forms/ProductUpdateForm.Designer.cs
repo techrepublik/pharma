@@ -205,9 +205,9 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.toolStripButton1,
             this.productBindingNavigatorSaveItem,
-            this.toolStripSeparator1,
-            this.toolStripButton1});
+            this.toolStripSeparator1});
             this.productBindingNavigator.Location = new System.Drawing.Point(0, 40);
             this.productBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.productBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -325,7 +325,7 @@
             // 
             // toolStripButton1
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Image = global::PharmaPos.Properties.Resources.Hopstarter_Button_Button_Close;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(56, 22);

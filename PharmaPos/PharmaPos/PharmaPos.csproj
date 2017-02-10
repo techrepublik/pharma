@@ -297,6 +297,12 @@
       <DependentUpon>POS.edmx</DependentUpon>
       <LastGenOutput>POS.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\file_list.ico" />
+    <None Include="Resources\next.ico" />
+    <None Include="Resources\arrow_refresh.ico" />
+    <None Include="Resources\Hopstarter-Button-Button-Close.ico" />
+    <None Include="Resources\gtk_find_and_replace.ico" />
+    <None Include="Resources\refresh-icon.png" />
     <None Include="Resources\thFTZEPTJU.jpg" />
   </ItemGroup>
   <ItemGroup>

@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierUpdateForm));
             System.Windows.Forms.Label supplierAddressLabel;
             System.Windows.Forms.Label supplierCodeLabel;
             System.Windows.Forms.Label supplierContactLabel;
             System.Windows.Forms.Label supplierIsActiveLabel;
             System.Windows.Forms.Label supplierNameLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupplierUpdateForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.supplierBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.supplierBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.supplierAddressTextBox = new System.Windows.Forms.TextBox();
             this.supplierCodeTextBox = new System.Windows.Forms.TextBox();
             this.supplierContactTextBox = new System.Windows.Forms.TextBox();
             this.supplierIsActiveCheckBox = new System.Windows.Forms.CheckBox();
             this.supplierNameTextBox = new System.Windows.Forms.TextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonClose = new System.Windows.Forms.ToolStripButton();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.supplierBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonClose = new System.Windows.Forms.ToolStripButton();
             supplierAddressLabel = new System.Windows.Forms.Label();
             supplierCodeLabel = new System.Windows.Forms.Label();
             supplierContactLabel = new System.Windows.Forms.Label();
@@ -66,6 +66,51 @@
             this.supplierBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // supplierAddressLabel
+            // 
+            supplierAddressLabel.AutoSize = true;
+            supplierAddressLabel.Location = new System.Drawing.Point(23, 147);
+            supplierAddressLabel.Name = "supplierAddressLabel";
+            supplierAddressLabel.Size = new System.Drawing.Size(89, 13);
+            supplierAddressLabel.TabIndex = 2;
+            supplierAddressLabel.Text = "Supplier Address:";
+            // 
+            // supplierCodeLabel
+            // 
+            supplierCodeLabel.AutoSize = true;
+            supplierCodeLabel.Location = new System.Drawing.Point(23, 95);
+            supplierCodeLabel.Name = "supplierCodeLabel";
+            supplierCodeLabel.Size = new System.Drawing.Size(35, 13);
+            supplierCodeLabel.TabIndex = 4;
+            supplierCodeLabel.Text = "Code:";
+            // 
+            // supplierContactLabel
+            // 
+            supplierContactLabel.AutoSize = true;
+            supplierContactLabel.Location = new System.Drawing.Point(23, 172);
+            supplierContactLabel.Name = "supplierContactLabel";
+            supplierContactLabel.Size = new System.Drawing.Size(47, 13);
+            supplierContactLabel.TabIndex = 6;
+            supplierContactLabel.Text = "Contact:";
+            // 
+            // supplierIsActiveLabel
+            // 
+            supplierIsActiveLabel.AutoSize = true;
+            supplierIsActiveLabel.Location = new System.Drawing.Point(23, 200);
+            supplierIsActiveLabel.Name = "supplierIsActiveLabel";
+            supplierIsActiveLabel.Size = new System.Drawing.Size(40, 13);
+            supplierIsActiveLabel.TabIndex = 10;
+            supplierIsActiveLabel.Text = "Active:";
+            // 
+            // supplierNameLabel
+            // 
+            supplierNameLabel.AutoSize = true;
+            supplierNameLabel.Location = new System.Drawing.Point(23, 121);
+            supplierNameLabel.Name = "supplierNameLabel";
+            supplierNameLabel.Size = new System.Drawing.Size(79, 13);
+            supplierNameLabel.TabIndex = 12;
+            supplierNameLabel.Text = "Supplier Name:";
             // 
             // panel1
             // 
@@ -108,6 +153,106 @@
             this.supplierBindingNavigator.TabIndex = 2;
             this.supplierBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // supplierAddressTextBox
+            // 
+            this.supplierAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierAddress", true));
+            this.supplierAddressTextBox.Location = new System.Drawing.Point(121, 144);
+            this.supplierAddressTextBox.Name = "supplierAddressTextBox";
+            this.supplierAddressTextBox.Size = new System.Drawing.Size(516, 20);
+            this.supplierAddressTextBox.TabIndex = 2;
+            // 
+            // supplierCodeTextBox
+            // 
+            this.supplierCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierCode", true));
+            this.supplierCodeTextBox.Location = new System.Drawing.Point(121, 92);
+            this.supplierCodeTextBox.Name = "supplierCodeTextBox";
+            this.supplierCodeTextBox.Size = new System.Drawing.Size(155, 20);
+            this.supplierCodeTextBox.TabIndex = 0;
+            // 
+            // supplierContactTextBox
+            // 
+            this.supplierContactTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierContact", true));
+            this.supplierContactTextBox.Location = new System.Drawing.Point(121, 169);
+            this.supplierContactTextBox.Name = "supplierContactTextBox";
+            this.supplierContactTextBox.Size = new System.Drawing.Size(260, 20);
+            this.supplierContactTextBox.TabIndex = 3;
+            // 
+            // supplierIsActiveCheckBox
+            // 
+            this.supplierIsActiveCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.supplierBindingSource, "SupplierIsActive", true));
+            this.supplierIsActiveCheckBox.Location = new System.Drawing.Point(121, 195);
+            this.supplierIsActiveCheckBox.Name = "supplierIsActiveCheckBox";
+            this.supplierIsActiveCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.supplierIsActiveCheckBox.TabIndex = 4;
+            this.supplierIsActiveCheckBox.Text = "     ";
+            this.supplierIsActiveCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // supplierNameTextBox
+            // 
+            this.supplierNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierName", true));
+            this.supplierNameTextBox.Location = new System.Drawing.Point(121, 118);
+            this.supplierNameTextBox.Name = "supplierNameTextBox";
+            this.supplierNameTextBox.Size = new System.Drawing.Size(516, 20);
+            this.supplierNameTextBox.TabIndex = 1;
+            // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataSource = typeof(PharmaPos.data.Supplier);
+            this.supplierBindingSource.CurrentChanged += new System.EventHandler(this.supplierBindingSource_CurrentChanged);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(74, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(60, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -125,32 +270,6 @@
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -170,28 +289,6 @@
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(74, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(60, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
             // supplierBindingNavigatorSaveItem
             // 
             this.supplierBindingNavigatorSaveItem.Enabled = false;
@@ -201,111 +298,14 @@
             this.supplierBindingNavigatorSaveItem.Text = "Save Data";
             this.supplierBindingNavigatorSaveItem.Click += new System.EventHandler(this.supplierBindingNavigatorSaveItem_Click);
             // 
-            // supplierAddressLabel
-            // 
-            supplierAddressLabel.AutoSize = true;
-            supplierAddressLabel.Location = new System.Drawing.Point(23, 147);
-            supplierAddressLabel.Name = "supplierAddressLabel";
-            supplierAddressLabel.Size = new System.Drawing.Size(89, 13);
-            supplierAddressLabel.TabIndex = 2;
-            supplierAddressLabel.Text = "Supplier Address:";
-            // 
-            // supplierAddressTextBox
-            // 
-            this.supplierAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierAddress", true));
-            this.supplierAddressTextBox.Location = new System.Drawing.Point(121, 144);
-            this.supplierAddressTextBox.Name = "supplierAddressTextBox";
-            this.supplierAddressTextBox.Size = new System.Drawing.Size(516, 20);
-            this.supplierAddressTextBox.TabIndex = 2;
-            // 
-            // supplierCodeLabel
-            // 
-            supplierCodeLabel.AutoSize = true;
-            supplierCodeLabel.Location = new System.Drawing.Point(23, 95);
-            supplierCodeLabel.Name = "supplierCodeLabel";
-            supplierCodeLabel.Size = new System.Drawing.Size(35, 13);
-            supplierCodeLabel.TabIndex = 4;
-            supplierCodeLabel.Text = "Code:";
-            // 
-            // supplierCodeTextBox
-            // 
-            this.supplierCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierCode", true));
-            this.supplierCodeTextBox.Location = new System.Drawing.Point(121, 92);
-            this.supplierCodeTextBox.Name = "supplierCodeTextBox";
-            this.supplierCodeTextBox.Size = new System.Drawing.Size(155, 20);
-            this.supplierCodeTextBox.TabIndex = 0;
-            // 
-            // supplierContactLabel
-            // 
-            supplierContactLabel.AutoSize = true;
-            supplierContactLabel.Location = new System.Drawing.Point(23, 172);
-            supplierContactLabel.Name = "supplierContactLabel";
-            supplierContactLabel.Size = new System.Drawing.Size(47, 13);
-            supplierContactLabel.TabIndex = 6;
-            supplierContactLabel.Text = "Contact:";
-            // 
-            // supplierContactTextBox
-            // 
-            this.supplierContactTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierContact", true));
-            this.supplierContactTextBox.Location = new System.Drawing.Point(121, 169);
-            this.supplierContactTextBox.Name = "supplierContactTextBox";
-            this.supplierContactTextBox.Size = new System.Drawing.Size(260, 20);
-            this.supplierContactTextBox.TabIndex = 3;
-            // 
-            // supplierIsActiveLabel
-            // 
-            supplierIsActiveLabel.AutoSize = true;
-            supplierIsActiveLabel.Location = new System.Drawing.Point(23, 200);
-            supplierIsActiveLabel.Name = "supplierIsActiveLabel";
-            supplierIsActiveLabel.Size = new System.Drawing.Size(40, 13);
-            supplierIsActiveLabel.TabIndex = 10;
-            supplierIsActiveLabel.Text = "Active:";
-            // 
-            // supplierIsActiveCheckBox
-            // 
-            this.supplierIsActiveCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.supplierBindingSource, "SupplierIsActive", true));
-            this.supplierIsActiveCheckBox.Location = new System.Drawing.Point(121, 195);
-            this.supplierIsActiveCheckBox.Name = "supplierIsActiveCheckBox";
-            this.supplierIsActiveCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.supplierIsActiveCheckBox.TabIndex = 4;
-            this.supplierIsActiveCheckBox.Text = "     ";
-            this.supplierIsActiveCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // supplierNameLabel
-            // 
-            supplierNameLabel.AutoSize = true;
-            supplierNameLabel.Location = new System.Drawing.Point(23, 121);
-            supplierNameLabel.Name = "supplierNameLabel";
-            supplierNameLabel.Size = new System.Drawing.Size(79, 13);
-            supplierNameLabel.TabIndex = 12;
-            supplierNameLabel.Text = "Supplier Name:";
-            // 
-            // supplierNameTextBox
-            // 
-            this.supplierNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierName", true));
-            this.supplierNameTextBox.Location = new System.Drawing.Point(121, 118);
-            this.supplierNameTextBox.Name = "supplierNameTextBox";
-            this.supplierNameTextBox.Size = new System.Drawing.Size(516, 20);
-            this.supplierNameTextBox.TabIndex = 1;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripButtonClose
             // 
-            this.toolStripButtonClose.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonClose.Image")));
+            this.toolStripButtonClose.Image = global::PharmaPos.Properties.Resources.Hopstarter_Button_Button_Close;
             this.toolStripButtonClose.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonClose.Name = "toolStripButtonClose";
             this.toolStripButtonClose.Size = new System.Drawing.Size(56, 22);
             this.toolStripButtonClose.Text = "&Close";
             this.toolStripButtonClose.Click += new System.EventHandler(this.toolStripButtonClose_Click);
-            // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataSource = typeof(PharmaPos.data.Supplier);
-            this.supplierBindingSource.CurrentChanged += new System.EventHandler(this.supplierBindingSource_CurrentChanged);
             // 
             // SupplierUpdateForm
             // 
