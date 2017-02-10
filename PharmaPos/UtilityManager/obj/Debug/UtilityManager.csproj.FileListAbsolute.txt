@@ -23,3 +23,8 @@ C:\Users\josh\Documents\GitHub\pharma\PharmaPos\UtilityManager\bin\Debug\Utility
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\UtilityManager\obj\Debug\UtilityManager.csprojResolveAssemblyReference.cache
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\UtilityManager\obj\Debug\UtilityManager.dll
 C:\Users\josh\Documents\GitHub\pharma\PharmaPos\UtilityManager\obj\Debug\UtilityManager.pdb
+C:\Users\admin\Documents\GitHub\pharma\PharmaPos\UtilityManager\bin\Debug\UtilityManager.dll
+C:\Users\admin\Documents\GitHub\pharma\PharmaPos\UtilityManager\bin\Debug\UtilityManager.pdb
+C:\Users\admin\Documents\GitHub\pharma\PharmaPos\UtilityManager\obj\Debug\UtilityManager.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\pharma\PharmaPos\UtilityManager\obj\Debug\UtilityManager.dll
+C:\Users\admin\Documents\GitHub\pharma\PharmaPos\UtilityManager\obj\Debug\UtilityManager.pdb

@@ -37,6 +37,20 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
+            this.productQuantityDataGridView = new System.Windows.Forms.DataGridView();
+            this.ProductQuantityVolume = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitId = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.productBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -51,12 +65,9 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productQuantityDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductQuantityVolume = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnitId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.unitBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,26 +78,15 @@
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.productQuantityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAddUpdateQnty = new System.Windows.Forms.ToolStripButton();
-            this.productBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.productBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButtonRefresh = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButtonGo = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAdvancedSearch = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1.SuspendLayout();
@@ -95,18 +95,18 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
             this.productBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -184,6 +184,160 @@
             this.productDataGridView.Size = new System.Drawing.Size(1066, 241);
             this.productDataGridView.TabIndex = 0;
             this.productDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.productDataGridView_DataError);
+            // 
+            // productQuantityDataGridView
+            // 
+            this.productQuantityDataGridView.AllowUserToAddRows = false;
+            this.productQuantityDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.productQuantityDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.productQuantityDataGridView.AutoGenerateColumns = false;
+            this.productQuantityDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productQuantityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.ProductQuantityVolume,
+            this.UnitId,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21});
+            this.productQuantityDataGridView.DataSource = this.productQuantityBindingSource;
+            this.productQuantityDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productQuantityDataGridView.Location = new System.Drawing.Point(0, 29);
+            this.productQuantityDataGridView.Name = "productQuantityDataGridView";
+            this.productQuantityDataGridView.ReadOnly = true;
+            this.productQuantityDataGridView.RowHeadersWidth = 30;
+            this.productQuantityDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.productQuantityDataGridView.Size = new System.Drawing.Size(1066, 181);
+            this.productQuantityDataGridView.TabIndex = 1;
+            this.productQuantityDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.productQuantityDataGridView_DataError);
+            // 
+            // ProductQuantityVolume
+            // 
+            this.ProductQuantityVolume.DataPropertyName = "ProductQuantityVolume";
+            this.ProductQuantityVolume.HeaderText = "Volume";
+            this.ProductQuantityVolume.Name = "ProductQuantityVolume";
+            this.ProductQuantityVolume.ReadOnly = true;
+            // 
+            // UnitId
+            // 
+            this.UnitId.DataPropertyName = "UnitId";
+            this.UnitId.DataSource = this.unitBindingSource;
+            this.UnitId.DisplayMember = "UnitName";
+            this.UnitId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.UnitId.HeaderText = "Unit";
+            this.UnitId.Name = "UnitId";
+            this.UnitId.ReadOnly = true;
+            this.UnitId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.UnitId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.UnitId.ValueMember = "UnitId";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.toolStrip1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1066, 29);
+            this.panel2.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButtonAddUpdateQnty});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1066, 25);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // productBindingNavigator
+            // 
+            this.productBindingNavigator.AddNewItem = null;
+            this.productBindingNavigator.BindingSource = this.productBindingSource;
+            this.productBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.productBindingNavigator.DeleteItem = null;
+            this.productBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.productBindingNavigatorSaveItem,
+            this.toolStripSeparator1,
+            this.toolStripButtonRefresh,
+            this.toolStripLabel1,
+            this.toolStripTextBox1,
+            this.toolStripButtonGo,
+            this.toolStripButtonAdvancedSearch});
+            this.productBindingNavigator.Location = new System.Drawing.Point(0, 40);
+            this.productBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.productBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.productBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.productBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.productBindingNavigator.Name = "productBindingNavigator";
+            this.productBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.productBindingNavigator.Size = new System.Drawing.Size(1066, 25);
+            this.productBindingNavigator.TabIndex = 4;
+            this.productBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(45, 22);
+            this.toolStripLabel1.Text = "Search:";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(200, 25);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -296,38 +450,6 @@
             this.productBindingSource.DataSource = typeof(PharmaPos.data.Product);
             this.productBindingSource.CurrentChanged += new System.EventHandler(this.productBindingSource_CurrentChanged);
             // 
-            // productQuantityDataGridView
-            // 
-            this.productQuantityDataGridView.AllowUserToAddRows = false;
-            this.productQuantityDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.productQuantityDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.productQuantityDataGridView.AutoGenerateColumns = false;
-            this.productQuantityDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productQuantityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.ProductQuantityVolume,
-            this.UnitId,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21});
-            this.productQuantityDataGridView.DataSource = this.productQuantityBindingSource;
-            this.productQuantityDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productQuantityDataGridView.Location = new System.Drawing.Point(0, 29);
-            this.productQuantityDataGridView.Name = "productQuantityDataGridView";
-            this.productQuantityDataGridView.ReadOnly = true;
-            this.productQuantityDataGridView.RowHeadersWidth = 30;
-            this.productQuantityDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.productQuantityDataGridView.Size = new System.Drawing.Size(1066, 181);
-            this.productQuantityDataGridView.TabIndex = 1;
-            this.productQuantityDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.productQuantityDataGridView_DataError);
-            // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "ProductQuantityDate";
@@ -348,26 +470,6 @@
             this.dataGridViewTextBoxColumn15.HeaderText = "Expiry Date";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // ProductQuantityVolume
-            // 
-            this.ProductQuantityVolume.DataPropertyName = "ProductQuantityVolume";
-            this.ProductQuantityVolume.HeaderText = "Volume";
-            this.ProductQuantityVolume.Name = "ProductQuantityVolume";
-            this.ProductQuantityVolume.ReadOnly = true;
-            // 
-            // UnitId
-            // 
-            this.UnitId.DataPropertyName = "UnitId";
-            this.UnitId.DataSource = this.unitBindingSource;
-            this.UnitId.DisplayMember = "UnitName";
-            this.UnitId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.UnitId.HeaderText = "Unit";
-            this.UnitId.Name = "UnitId";
-            this.UnitId.ReadOnly = true;
-            this.UnitId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.UnitId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.UnitId.ValueMember = "UnitId";
             // 
             // unitBindingSource
             // 
@@ -446,25 +548,6 @@
             // 
             this.productQuantityBindingSource.DataSource = typeof(PharmaPos.data.ProductQuantity);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.toolStrip1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1066, 29);
-            this.panel2.TabIndex = 0;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonAddUpdateQnty});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1066, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // toolStripButtonAddUpdateQnty
             // 
             this.toolStripButtonAddUpdateQnty.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAddUpdateQnty.Image")));
@@ -473,49 +556,6 @@
             this.toolStripButtonAddUpdateQnty.Size = new System.Drawing.Size(186, 22);
             this.toolStripButtonAddUpdateQnty.Text = "&Add/Update Product Quantity";
             this.toolStripButtonAddUpdateQnty.Click += new System.EventHandler(this.toolStripButtonAddUpdateQnty_Click);
-            // 
-            // productBindingNavigator
-            // 
-            this.productBindingNavigator.AddNewItem = null;
-            this.productBindingNavigator.BindingSource = this.productBindingSource;
-            this.productBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.productBindingNavigator.DeleteItem = null;
-            this.productBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.productBindingNavigatorSaveItem,
-            this.toolStripSeparator1,
-            this.toolStripButtonRefresh,
-            this.toolStripLabel1,
-            this.toolStripTextBox1,
-            this.toolStripButtonGo,
-            this.toolStripButtonAdvancedSearch});
-            this.productBindingNavigator.Location = new System.Drawing.Point(0, 40);
-            this.productBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.productBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.productBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.productBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.productBindingNavigator.Name = "productBindingNavigator";
-            this.productBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productBindingNavigator.Size = new System.Drawing.Size(1066, 25);
-            this.productBindingNavigator.TabIndex = 4;
-            this.productBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -535,25 +575,6 @@
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -571,11 +592,6 @@
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -604,34 +620,18 @@
             this.productBindingNavigatorSaveItem.Text = "Save Data";
             this.productBindingNavigatorSaveItem.Visible = false;
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // toolStripButtonRefresh
             // 
-            this.toolStripButtonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRefresh.Image")));
+            this.toolStripButtonRefresh.Image = global::PharmaPos.Properties.Resources.arrow_refresh;
             this.toolStripButtonRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonRefresh.Name = "toolStripButtonRefresh";
             this.toolStripButtonRefresh.Size = new System.Drawing.Size(66, 22);
             this.toolStripButtonRefresh.Text = "&Refresh";
             this.toolStripButtonRefresh.Click += new System.EventHandler(this.toolStripButtonRefresh_Click);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(45, 22);
-            this.toolStripLabel1.Text = "Search:";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(200, 25);
-            // 
             // toolStripButtonGo
             // 
-            this.toolStripButtonGo.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonGo.Image")));
+            this.toolStripButtonGo.Image = global::PharmaPos.Properties.Resources.next;
             this.toolStripButtonGo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonGo.Name = "toolStripButtonGo";
             this.toolStripButtonGo.Size = new System.Drawing.Size(57, 22);
@@ -640,7 +640,7 @@
             // 
             // toolStripButtonAdvancedSearch
             // 
-            this.toolStripButtonAdvancedSearch.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAdvancedSearch.Image")));
+            this.toolStripButtonAdvancedSearch.Image = global::PharmaPos.Properties.Resources.gtk_find_and_replace;
             this.toolStripButtonAdvancedSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonAdvancedSearch.Name = "toolStripButtonAdvancedSearch";
             this.toolStripButtonAdvancedSearch.Size = new System.Drawing.Size(118, 22);
@@ -665,14 +665,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productQuantityDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -680,6 +673,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).EndInit();
             this.productBindingNavigator.ResumeLayout(false);
             this.productBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drugTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productQuantityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
